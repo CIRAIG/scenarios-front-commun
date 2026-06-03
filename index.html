@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front commun pour la transition énergétique du Québec — Résultats des scénarios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f3ee;
+      --surface: #ffffff;
+      --surface2: #f0ede6;
+      --border: #d8d3c8;
+      --border-strong: #b0a898;
+      --text: #1a1814;
+      --text-muted: #6b6559;
+      --text-faint: #9e9589;
+      --accent: #1a5c3a;
+      --accent-light: #e8f2ec;
+      --accent2: #7a4f1d;
+      --accent2-light: #f5ede3;
+      --sidebar-w: 260px;
+      --header-h: 60px;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      height: var(--header-h);
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      gap: 1rem;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Source Serif 4', serif;
+      font-size: 18px;
+      color: white;
+      font-weight: 600;
+    }
+    header h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 17px;
+      font-weight: 300;
+      color: white;
+      letter-spacing: 0.01em;
+    }
+    header h1 strong { font-weight: 600; }
+    .tab-group {
+      margin-left: auto;
+      display: flex;
+      gap: 4px;
+    }
+    .tab-btn {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 6px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:hover { background: rgba(255,255,255,0.2); color: white; }
+    .tab-btn.active {
+      background: white;
+      color: var(--accent);
+      font-weight: 500;
+      border-color: white;
+    }
+
+    /* ── Main layout ── */
+    .app-body {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      width: var(--sidebar-w);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      flex-shrink: 0;
+      padding: 1rem 0;
+    }
+    aside::-webkit-scrollbar { width: 4px; }
+    aside::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      padding: 0.75rem 1rem 0.35rem;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 1rem;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.1s, color 0.1s;
+      user-select: none;
+      border-left: 3px solid transparent;
+    }
+    .nav-item:hover { background: var(--bg); color: var(--text); }
+    .nav-item.active {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 500;
+      border-left-color: var(--accent);
+    }
+    .nav-item svg {
+      width: 15px; height: 15px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .nav-item.active svg { opacity: 1; }
+
+    /* ── Content ── */
+    main {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pane { display: none; flex: 1; flex-direction: column; }
+    .pane.active { display: flex; }
+
+    /* ── Comparatif pane ── */
+    .chart-header {
+      padding: 1.25rem 1.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .chart-header h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .chart-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .chart-frame-wrap {
+      flex: 1;
+      padding: 1rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .chart-frame-wrap iframe {
+      flex: 1;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      width: 100%;
+      min-height: 500px;
+    }
+
+    /* ── Scénario pane ── */
+    .scenario-toolbar {
+      padding: 1rem 1.5rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .scenario-toolbar label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .scenario-select {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 7px;
+      padding: 6px 12px;
+      cursor: pointer;
+      min-width: 240px;
+    }
+    .scenario-select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+    .scenario-type-tabs {
+      display: flex;
+      gap: 4px;
+      margin-left: auto;
+    }
+    .stype-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .stype-btn:hover { border-color: var(--border-strong); color: var(--text); }
+    .stype-btn.active {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .sankey-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem 1.5rem 1.5rem;
+      overflow: hidden;
+    }
+    .sankey-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .sankey-card-header {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sankey-card-header .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-energy { background: var(--accent); }
+    .dot-carbon { background: var(--accent2); }
+    .sankey-card-header span {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .sankey-card iframe {
+      flex: 1;
+      border: none;
+      width: 100%;
+    }
+    .sankey-placeholder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-faint);
+      font-size: 13px;
+      background: var(--bg);
+    }
+    .sankey-placeholder svg { opacity: 0.3; width: 32px; height: 32px; }
+
+    /* ── À propos pane ── */
+    .about-content {
+      max-width: 680px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .about-content h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .about-content p { font-size: 14px; line-height: 1.75; color: var(--text-muted); margin-bottom: 1rem; }
+    .about-content a { color: var(--accent); }
+    .scenarios-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      font-size: 13px;
+    }
+    .scenarios-table th {
+      text-align: left;
+      padding: 8px 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-weight: 500;
+    }
+    .scenarios-table td {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .badge-nz { background: var(--accent-light); color: var(--accent); }
+    .badge-cc { background: var(--accent2-light); color: var(--accent2); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">T</div>
+  <h1><strong>Front commun pour la transition énergétique</strong> Québec — Résultats des scénarios</h1>
+  <div class="tab-group">
+    <button class="tab-btn active" onclick="switchTab('comparatif')">Vue comparative</button>
+    <button class="tab-btn" onclick="switchTab('scenario')">Par scénario</button>
+    <button class="tab-btn" onclick="switchTab('about')">À propos</button>
+  </div>
+</header>
+
+<div class="app-body">
+
+  <!-- ── Sidebar (comparatif) ── -->
+  <aside id="sidebar-comparatif">
+    <div class="section-label">Configuration système</div>
+    <div class="nav-item active" onclick="loadChart(this, 'Results/configuration_electricity.html', 'Mix électrique', 'Technologies de production d\'électricité par scénario')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Électricité
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/configuration_heat.html', 'Chaleur industrielle et domestique', 'Technologies de production de chaleur par scénario')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c0 6-6 8-6 14a6 6 0 0012 0c0-6-6-8-6-14z"/></svg>
+      Chaleur
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/configuration_passenger_mobility.html', 'Mobilité des personnes', 'Technologies de transport des personnes par scénario')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
+      Mobilité des personnes
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/configuration_freight_mobility.html', 'Mobilité des marchandises', 'Technologies de transport de fret par scénario')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      Mobilité de fret
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/configuration_carbon_capture.html', 'Captage de carbone', 'Technologies de captage de CO₂ par scénario')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Captage de carbone
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/configuration_carbon_storage_and_utilization.html', 'Stockage & utilisation du carbone', 'Options de stockage et valorisation du CO₂')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="8" rx="8" ry="4"/><path d="M4 8v4c0 2.21 3.58 4 8 4s8-1.79 8-4V8"/><path d="M4 12v4c0 2.21 3.58 4 8 4s8-1.79 8-4v-4"/></svg>
+      Stockage & utilisation de carbone
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/configuration_other.html', 'Carburants alternatifs', 'Technologies de production de carburants alternatifs')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      Carburants alternatifs
+    </div>
+
+    <div class="section-label" style="margin-top:0.5rem">Coûts système</div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/costs_system.html', 'Coûts du système', 'Coûts totaux annualisés du système énergétique')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Coûts système
+    </div>
+
+    <div class="section-label" style="margin-top:0.5rem">Impacts ACV — Catégories d'impact</div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_categories_human_health.html', 'Santé humaine — par catégorie d\'impact', 'Contributions par catégorie d\'impact, indicateur Santé humaine')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Santé humaine
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_categories_ecosystem_quality.html', 'Qualité des écosystèmes — par catégorie d\'impact', 'Contributions par catégorie d\'impact, indicateur Qualité des écosystèmes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22V12M12 12C12 12 7 9 7 5a5 5 0 0110 0c0 4-5 7-5 7z"/></svg>
+      Qualité des écosystèmes
+    </div>
+
+    <div class="section-label" style="margin-top:0.5rem">Impacts ACV — Secteurs</div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_sectors_hh.html', 'Santé humaine — par secteur', 'Contributions par secteur, indicateur Santé humaine')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Santé humaine
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_sectors_eq.html', 'Qualité des écosystèmes — par secteur', 'Contributions par secteur, indicateur Qualité des écosystèmes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Qualité des écosystèmes
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_sectors_ccst.html', 'Changement climatique — par secteur', 'Contributions par secteur, indicateur Changement climatique')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Changement climatique
+    </div>
+
+    <div class="section-label" style="margin-top:0.5rem">Impacts ACV — Phases du cycle de vie</div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_phases_hh.html', 'Santé humaine — par phase du cycle de vie', 'Contributions par phase du cycle de vie, indicateur Santé humaine')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Santé humaine
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_phases_eq.html', 'Qualité des écosystèmes — par phase du cycle de vie', 'Contributions par phase du cycle de vie, indicateur Qualité des écosystèmes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Qualité des écosystèmes
+    </div>
+    <div class="nav-item" onclick="loadChart(this, 'Results/contributions_phases_ccst.html', 'Changement climatique — par phase du cycle de vie', 'Contributions par phase du cycle de vie, indicateur Changement climatique')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Changement climatique
+    </div>
+  </aside>
+
+  <!-- ── Content area ── -->
+  <main>
+
+    <!-- Pane : Vue comparative -->
+    <div class="pane active" id="pane-comparatif">
+      <div class="chart-header">
+        <h2 id="chart-title">Mix électrique</h2>
+        <p id="chart-desc">Technologies de production d'électricité par scénario</p>
+      </div>
+      <div class="chart-frame-wrap">
+        <iframe id="chart-iframe" src="Results/configuration_electricity.html" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <!-- Pane : Par scénario -->
+    <div class="pane" id="pane-scenario">
+      <div class="scenario-toolbar">
+        <label for="scenario-select">Scénario :</label>
+        <select class="scenario-select" id="scenario-select" onchange="updateSankeys()">
+          <option value="reference">Référence (2023)</option>
+          <option value="brut">Brut</option>
+          <option value="brut_nz">Brut (NZ)</option>
+          <option value="acc_verte">Accélération verte</option>
+          <option value="acc_verte_nz">Accélération verte (NZ)</option>
+          <option value="sobre">Sobre</option>
+          <option value="sobre_nz">Sobre (NZ)</option>
+          <option value="sobre_lim_cc_nz">Sobre — captage carbone limité (NZ)</option>
+          <option value="energyscope">Optimum EnergyScope</option>
+          <option value="energyscope_nz">Optimum EnergyScope (NZ)</option>
+        </select>
+        <div class="scenario-type-tabs">
+          <button class="stype-btn active" onclick="switchSankeyType('energy', this)">Flux énergétiques</button>
+          <button class="stype-btn" onclick="switchSankeyType('carbon', this)">Flux de carbone</button>
+          <button class="stype-btn" onclick="switchSankeyType('both', this)">Les deux</button>
+        </div>
+      </div>
+      <div class="sankey-grid" id="sankey-grid">
+        <div class="sankey-card" id="card-energy">
+          <div class="sankey-card-header">
+            <div class="dot dot-energy"></div>
+            <span>Flux énergétiques</span>
+          </div>
+          <iframe id="iframe-energy" src="Results/sankey_reference.html" frameborder="0" style="height:100%; min-height:500px;"></iframe>
+        </div>
+        <div class="sankey-card" id="card-carbon" style="display:none;">
+          <div class="sankey-card-header">
+            <div class="dot dot-carbon"></div>
+            <span>Flux de carbone</span>
+          </div>
+          <iframe id="iframe-carbon" src="Results/sankey_carbon_flows_reference.html" frameborder="0" style="height:100%; min-height:500px;"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pane : À propos -->
+    <div class="pane" id="pane-about">
+      <div class="about-content">
+        <h2>Scénarios de transition énergétique du Front Commun pour la transition énergétique du Québec</h2>
+        <p>
+          Ces résultats ont été produits dans le cadre du
+          <a href="https://www.pourlatransitionenergetique.org/" target="_blank">Front commun pour la transition énergétique</a>.
+          Les scénarios combinent la modélisation du système énergétique (<a href="https://github.com/CIRAIG/EnergyScope-Quebec" target="_blank">EnergyScope-Québec</a>) et
+          l'analyse du cycle de vie (<a href="https://mescal.readthedocs.io/en/latest/" target="_blank">mescal</a>) pour l'année 2050.
+        </p>
+        <p>
+          L'outil permet d'explorer deux niveaux de lecture :
+          la <strong>vue comparative</strong> présente l'ensemble des configurations côte à côte (mix énergétique, coûts, impacts ACV),
+          tandis que la <strong>vue par scénario</strong> détaille les flux énergétiques et de carbone d'un scénario en particulier via des diagrammes Sankey.
+        </p>
+        <p>
+          Dans les résultats présentés, la contrainte net-zéro (<strong>NZ</strong>) s'applique aux émissions territoriales du système énergétique.
+          En d'autres termes, les émissions résiduelles du système énergétiques doivent être compensées.
+          Par contre, les émissions des autres secteurs de l'économie québécoises ainsi que les émissions ayant lieu à l'étranger pour le système québécois ne sont pas compensées.
+          Pour aller dans cette direction, une contrainte net-négative peut être mise en place dans EnergyScope afin de compenser les émissions non-énergétiques et/ou à l'étranger.
+        </p>
+
+        <table class="scenarios-table">
+          <thead>
+            <tr>
+              <th>Identifiant</th>
+              <th>Description</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>reference</code></td>
+              <td>Scénario de référence (2023), sans transition</td>
+              <td><span class="badge badge-nz" style="background:#f0ede6;color:#6b6559;">Référence</span></td>
+            </tr>
+            <tr>
+              <td><code>brut</code></td>
+              <td>Croissance non contrainte, sans objectif climatique</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><code>brut_nz</code></td>
+              <td>Croissance non contrainte, avec objectif zéro net</td>
+              <td><span class="badge badge-nz">Zéro net</span></td>
+            </tr>
+            <tr>
+              <td><code>acc_verte</code></td>
+              <td>Accélération verte, sans objectif zéro net</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><code>acc_verte_nz</code></td>
+              <td>Accélération verte avec objectif zéro net</td>
+              <td><span class="badge badge-nz">Zéro net</span></td>
+            </tr>
+            <tr>
+              <td><code>sobre</code></td>
+              <td>Sobriété énergétique, sans objectif zéro net</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><code>sobre_nz</code></td>
+              <td>Sobriété énergétique, atteinte du zéro net</td>
+              <td><span class="badge badge-nz">Zéro net</span></td>
+            </tr>
+            <tr>
+              <td><code>sobre_lim_cc_nz</code></td>
+              <td>Sobriété + déploiement limité de CCS, zéro net</td>
+              <td><span class="badge badge-cc">Limite CCS</span> <span class="badge badge-nz">Zéro net</span></td>
+            </tr>
+            <tr>
+              <td><code>energyscope</code></td>
+              <td>Optimum EnergyScope avec demandes du Canada’s Energy Future 2023</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><code>energyscope_nz</code></td>
+              <td>Optimum EnergyScope avec demandes du Canada’s Energy Future 2023, zéro net</td>
+              <td><span class="badge badge-nz">Zéro net</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="margin-top:1.5rem; font-size:12px; color:var(--text-faint);">
+          Outil développé avec EnergyScope-Québec, mescal &amp; Plotly.
+          Les graphes sont générés en Python et intégrés ici comme iframes statiques.
+        </p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  const SANKEY_MAP = {
+    reference: {
+      energy: 'Results/sankey_reference.html',
+      carbon: 'Results/sankey_carbon_flows_reference.html',
+    },
+    brut: {
+      energy: 'Results/sankey_brut.html',
+      carbon: 'Results/sankey_carbon_flows_brut.html',
+    },
+    brut_nz: {
+      energy: 'Results/sankey_brut_nz.html',
+      carbon: 'Results/sankey_carbon_flows_brut_nz.html',
+    },
+    acc_verte: {
+      energy: 'Results/sankey_acc_verte.html',
+      carbon: 'Results/sankey_carbon_flows_acc_verte.html',
+    },
+    acc_verte_nz: {
+      energy: 'Results/sankey_acc_verte_nz.html',
+      carbon: 'Results/sankey_carbon_flows_acc_verte_nz.html',
+    },
+    sobre: {
+      energy: 'Results/sankey_sobre.html',
+      carbon: 'Results/sankey_carbon_flows_sobre.html',
+    },
+    sobre_nz: {
+      energy: 'Results/sankey_sobre_nz.html',
+      carbon: 'Results/sankey_carbon_flows_sobre_nz.html',
+    },
+    sobre_lim_cc_nz: {
+      energy: 'Results/sankey_sobre_lim_cc_nz.html',
+      carbon: 'Results/sankey_carbon_flows_sobre_lim_cc_nz.html',
+    },
+    energyscope: {
+      energy: 'Results/sankey_energyscope.html',
+      carbon: 'Results/sankey_carbon_flows_energyscope.html',
+    },
+    energyscope_nz: {
+      energy: 'Results/sankey_energyscope_nz.html',
+      carbon: 'Results/sankey_carbon_flows_energyscope_nz.html',
+    },
+  };
+
+  let currentSankeyType = 'energy';
+
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      b.classList.toggle('active', ['comparatif','scenario','about'][i] === tab);
+    });
+    document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+    document.getElementById('pane-' + tab).classList.add('active');
+
+    const sidebar = document.getElementById('sidebar-comparatif');
+    sidebar.style.display = tab === 'comparatif' ? '' : 'none';
+  }
+
+  function loadChart(el, src, title, desc) {
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('chart-iframe').src = src;
+    document.getElementById('chart-title').textContent = title;
+    document.getElementById('chart-desc').textContent = desc;
+  }
+
+  function switchSankeyType(type, btn) {
+    currentSankeyType = type;
+    document.querySelectorAll('.stype-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateSankeyLayout();
+  }
+
+  function updateSankeys() {
+    const scenario = document.getElementById('scenario-select').value;
+    const map = SANKEY_MAP[scenario] || {};
+
+    const iframeE = document.getElementById('iframe-energy');
+    const iframeC = document.getElementById('iframe-carbon');
+
+    if (map.energy) iframeE.src = map.energy;
+    if (map.carbon) iframeC.src = map.carbon;
+
+    updateSankeyLayout();
+  }
+
+  function updateSankeyLayout() {
+    const cardE = document.getElementById('card-energy');
+    const cardC = document.getElementById('card-carbon');
+    const grid  = document.getElementById('sankey-grid');
+
+    if (currentSankeyType === 'energy') {
+      cardE.style.display = '';
+      cardC.style.display = 'none';
+      grid.style.gridTemplateColumns = '1fr';
+    } else if (currentSankeyType === 'carbon') {
+      cardE.style.display = 'none';
+      cardC.style.display = '';
+      grid.style.gridTemplateColumns = '1fr';
+    } else {
+      cardE.style.display = '';
+      cardC.style.display = '';
+      grid.style.gridTemplateColumns = '1fr 1fr';
+    }
+  }
+
+  // init
+  updateSankeyLayout();
+</script>
+</body>
+</html>
