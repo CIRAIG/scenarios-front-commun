@@ -451,7 +451,7 @@
       <div class="scenario-toolbar">
         <label for="scenario-select">Scénario :</label>
         <select class="scenario-select" id="scenario-select" onchange="updateSankeys()">
-          <option value="reference">Référence (2023)</option>
+          <option value="actuel">Actuel (2023)</option>
           <option value="brut">Brut</option>
           <option value="brut_nz">Brut (NZ)</option>
           <option value="acc_verte">Accélération verte</option>
@@ -474,14 +474,14 @@
             <div class="dot dot-energy"></div>
             <span>Flux énergétiques</span>
           </div>
-          <iframe id="iframe-energy" src="Results/sankey_reference.html" frameborder="0" style="height:100%; min-height:500px;"></iframe>
+          <iframe id="iframe-energy" src="Results/sankey_actuel.html" frameborder="0" style="height:100%; min-height:500px;"></iframe>
         </div>
         <div class="sankey-card" id="card-carbon" style="display:none;">
           <div class="sankey-card-header">
             <div class="dot dot-carbon"></div>
             <span>Flux de carbone</span>
           </div>
-          <iframe id="iframe-carbon" src="Results/sankey_carbon_flows_reference.html" frameborder="0" style="height:100%; min-height:500px;"></iframe>
+          <iframe id="iframe-carbon" src="Results/sankey_carbon_flows_actuel.html" frameborder="0" style="height:100%; min-height:500px;"></iframe>
         </div>
       </div>
     </div>
@@ -518,9 +518,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><code>reference</code></td>
-              <td>Scénario de référence (2023), sans transition</td>
-              <td><span class="badge badge-nz" style="background:#f0ede6;color:#6b6559;">Référence</span></td>
+              <td><code>actuel</code></td>
+              <td>Actuel (2023), sans transition</td>
+              <td><span class="badge badge-nz" style="background:#f0ede6;color:#6b6559;">Actuel</span></td>
             </tr>
             <tr>
               <td><code>brut</code></td>
@@ -582,9 +582,9 @@
 
 <script>
   const SANKEY_MAP = {
-    reference: {
-      energy: 'Results/sankey_reference.html',
-      carbon: 'Results/sankey_carbon_flows_reference.html',
+    actuel: {
+      energy: 'Results/sankey_actuel.html',
+      carbon: 'Results/sankey_carbon_flows_actuel.html',
     },
     brut: {
       energy: 'Results/sankey_brut.html',
