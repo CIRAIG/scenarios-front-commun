@@ -425,6 +425,53 @@
     .ref-list a { color: var(--accent); }
     .contrib-table { margin-top: 0.75rem; }
     .contrib-table td:first-child { white-space: nowrap; }
+
+    /* ── Hypothèses table ── */
+    .hyp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 12.5px;
+    }
+    .hyp-table thead tr th {
+      background: var(--accent);
+      color: white;
+      padding: 8px 12px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid var(--accent);
+    }
+    .hyp-table thead tr th:first-child { text-align: left; }
+    .hyp-table tbody tr td {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      text-align: center;
+      vertical-align: middle;
+    }
+    .hyp-table tbody tr td:first-child { text-align: left; }
+    .hyp-table tr.row-category td {
+      background: var(--surface2);
+      font-weight: 600;
+      color: var(--text);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+    }
+    .hyp-table tr.row-sub td:first-child {
+      padding-left: 24px;
+      color: var(--text-muted);
+    }
+    .hyp-table tbody tr:hover td { background: #f8f6f1; }
+    .hyp-table tr.row-category:hover td { background: var(--surface2); }
+    .hyp-note {
+      font-size: 11.5px;
+      color: var(--text-faint);
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+    .val-hi { color: #b45309; font-weight: 500; }  /* >100% = croissance */
+    .val-lo { color: var(--accent); font-weight: 500; }  /* <100% = réduction */
+    .val-eq { color: var(--text-faint); }  /* =100% = stable */
   </style>
 </head>
 <body>
@@ -656,7 +703,198 @@
           </tbody>
         </table>
 
-        <!-- ── Ressources ── -->
+        <!-- ── Hypothèses chiffrées ── -->
+        <h3 class="about-h3">Hypothèses chiffrées des scénarios</h3>
+        <p>Principales hypothèses de demande et de structure du système énergétique en 2050, exprimées en proportion de la valeur de référence 2023. Les technologies de captage et stockage de carbone (CCS) sont disponibles dans tous les scénarios, mais ne s'activent que lorsque la contrainte de carboneutralité est active (scénarios NZ).</p>
+        <table class="hyp-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Brut</th>
+              <th>Acc. verte</th>
+              <th>Sobre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Industrie -->
+            <tr class="row-category">
+              <td>Industrie</td>
+              <td><span class="val-hi">+90 %</span></td>
+              <td><span class="val-hi">+100 %</span></td>
+              <td><span class="val-lo">−30 %</span></td>
+            </tr>
+            <!-- Bâtiment -->
+            <tr class="row-category">
+              <td>Bâtiment</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Eau chaude</td>
+              <td><span class="val-eq">= 0 %</span></td>
+              <td><span class="val-lo">−50 %</span></td>
+              <td><span class="val-lo">−50 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Électricité</td>
+              <td><span class="val-hi">+45 %</span></td>
+              <td><span class="val-lo">−25 %</span></td>
+              <td><span class="val-lo">−50 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Chauffage</td>
+              <td><span class="val-hi">+25 %</span></td>
+              <td><span class="val-lo">−50 %</span></td>
+              <td><span class="val-lo">−50 %</span></td>
+            </tr>
+            <!-- Services -->
+            <tr class="row-category">
+              <td>Services</td>
+              <td><span class="val-hi">+20 %</span></td>
+              <td><span class="val-lo">−40 %</span></td>
+              <td><span class="val-eq">= 0 %</span></td>
+            </tr>
+            <!-- Agriculture -->
+            <tr class="row-category">
+              <td>Agriculture</td>
+              <td><span class="val-lo">−10 %</span></td>
+              <td><span class="val-lo">−35 %</span></td>
+              <td><span class="val-hi">+50 %</span></td>
+            </tr>
+            <!-- Mobilité des personnes -->
+            <tr class="row-category">
+              <td>Mobilité des personnes</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Courte distance</td>
+              <td><span class="val-hi">+10 %</span></td>
+              <td><span class="val-lo">−10 %</span></td>
+              <td><span class="val-lo">−34 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Moyenne distance</td>
+              <td><span class="val-hi">+10 %</span></td>
+              <td><span class="val-lo">−10 %</span></td>
+              <td><span class="val-lo">−34 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Longue distance</td>
+              <td><span class="val-hi">+25 %</span></td>
+              <td><span class="val-lo">−90 %</span></td>
+              <td><span class="val-lo">−90 %</span></td>
+            </tr>
+            <!-- Mobilité en voiture individuelle -->
+            <tr class="row-category">
+              <td>Mobilité en voiture individuelle</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Volume total</td>
+              <td><span class="val-eq">= 0 %</span></td>
+              <td><span class="val-lo">−40 %</span></td>
+              <td><span class="val-lo">−80 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Part SUV électrique en 2050</td>
+              <td>50 %</td>
+              <td>20 %</td>
+              <td>5 %</td>
+            </tr>
+            <tr class="row-sub">
+              <td>Part SUV essence en 2050</td>
+              <td>50 %</td>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            <tr class="row-sub">
+              <td>Part voiture électrique en 2050</td>
+              <td>0 %</td>
+              <td>80 %</td>
+              <td>95 %</td>
+            </tr>
+            <tr class="row-sub">
+              <td>Part voiture essence en 2050</td>
+              <td>0 %</td>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            <!-- Transport de marchandises -->
+            <tr class="row-category">
+              <td>Transport de marchandises</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Volume total</td>
+              <td><span class="val-hi">+70 %</span></td>
+              <td><span class="val-hi">+50 %</span></td>
+              <td><span class="val-lo">−60 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Part du train</td>
+              <td><span class="val-hi">+15 %</span></td>
+              <td><span class="val-hi">+75 %</span></td>
+              <td><span class="val-hi">+150 %</span></td>
+            </tr>
+            <!-- Export -->
+            <tr class="row-category">
+              <td>Export de sources d'énergie</td>
+              <td><span class="val-hi">+30 %</span></td>
+              <td><span class="val-hi">+100 %</span></td>
+              <td><span class="val-lo">−50 %</span></td>
+            </tr>
+            <!-- Imports fossiles -->
+            <tr class="row-category">
+              <td>Imports de ressources fossiles</td>
+              <td colspan="3"></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Gaz</td>
+              <td><span class="val-lo">−50 %</span></td>
+              <td><span class="val-eq">= 0 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Diésel</td>
+              <td><span class="val-eq">= 0 %</span></td>
+              <td><span class="val-lo">−30 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Essence</td>
+              <td><span class="val-lo">−50 %</span></td>
+              <td><span class="val-lo">−90 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Mazout</td>
+              <td><span class="val-lo">−100 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Carburant avion</td>
+              <td><span class="val-hi">+25 %</span></td>
+              <td><span class="val-lo">−90 %</span></td>
+              <td><span class="val-lo">−90 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Charbon</td>
+              <td><span class="val-lo">−100 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="hyp-note">
+          Toutes les valeurs sont exprimées en variation par rapport à la demande de référence 2023, sauf les parts de flotte (% absolus en 2050).
+          <span style="color:var(--accent); font-weight:500;">Vert</span> = réduction, <span style="color:#b45309; font-weight:500;">Ambre</span> = croissance par rapport à 2023.
+          Les scénarios avec variante NZ (zéro net) partagent les mêmes hypothèses de demande que leur équivalent sans contrainte climatique.
+        </p>
+
+        <p style="margin-top:1.5rem; font-size:12px; color:var(--text-faint);">
+          Outil développé avec EnergyScope-Québec, mescal &amp; Plotly.
+          Les graphes sont générés en Python et intégrés ici comme iframes statiques.
+        </p>
         <h3 class="about-h3">Ressources à votre disposition</h3>
         <p>Les documents suivants peuvent vous aider à explorer les données et le contexte énergétique québécois et international.</p>
         <ul class="resource-list">
