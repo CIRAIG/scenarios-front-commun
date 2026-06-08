@@ -339,6 +339,92 @@
     }
     .badge-nz { background: var(--accent-light); color: var(--accent); }
     .badge-cc { background: var(--accent2-light); color: var(--accent2); }
+
+    /* ── About extra sections ── */
+    .about-h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 2.25rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .resource-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-top: 0.75rem;
+    }
+    .resource-list li {
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .resource-title {
+      font-size: 13.5px;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .resource-title a { color: var(--accent); text-decoration: none; }
+    .resource-title a:hover { text-decoration: underline; }
+    .resource-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .resource-lang {
+      font-size: 10px;
+      font-weight: 500;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text-faint);
+      padding: 1px 5px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-left: 4px;
+    }
+    .ref-list {
+      list-style: none;
+      counter-reset: ref-counter;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .ref-list li {
+      counter-increment: ref-counter;
+      position: relative;
+      padding: 0.65rem 0.9rem 0.65rem 2.6rem;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .ref-list li::before {
+      content: counter(ref-counter);
+      position: absolute;
+      left: 0.75rem;
+      top: 0.72rem;
+      width: 18px;
+      height: 18px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 18px;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-faint);
+    }
+    .ref-list a { color: var(--accent); }
+    .contrib-table { margin-top: 0.75rem; }
+    .contrib-table td:first-child { white-space: nowrap; }
   </style>
 </head>
 <body>
@@ -566,6 +652,73 @@
               <td><code>energyscope_nz</code></td>
               <td>Optimum EnergyScope avec demandes du Canada’s Energy Future 2023, zéro net</td>
               <td><span class="badge badge-nz">Zéro net</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ── Ressources ── -->
+        <h3 class="about-h3">Ressources à votre disposition</h3>
+        <p>Les documents suivants peuvent vous aider à explorer les données et le contexte énergétique québécois et international.</p>
+        <ul class="resource-list">
+          <li>
+            <div class="resource-title"><a href="https://energie.hec.ca/eeq/" target="_blank">État de l'énergie au Québec 2026</a></div>
+            <div class="resource-desc">Tableau de bord annuel de la consommation et de la production énergétique au Québec, produit par HEC Montréal.</div>
+          </li>
+          <li>
+            <div class="resource-title"><a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/economie/publications-adm/rapport/RA_preliminaire_PGIRE.pdf" target="_blank">Plan de gestion intégrée des ressources énergétiques (PGIRE)</a></div>
+            <div class="resource-desc">Document préliminaire du gouvernement du Québec présentant la planification des ressources énergétiques à l'horizon 2035.</div>
+          </li>
+          <li>
+            <div class="resource-title"><a href="https://www.hydroquebec.com/data/a-propos/pdf/plan-action-2035.pdf" target="_blank">Hydro-Québec — Vers un Québec décarboné et prospère : Plan d'action 2035</a></div>
+            <div class="resource-desc">Plan stratégique d'Hydro-Québec pour accompagner la décarbonation de l'économie québécoise à l'horizon 2035.</div>
+          </li>
+          <li>
+            <div class="resource-title"><a href="https://www.iea.org/reports/world-energy-outlook-2025" target="_blank">IEA (2025) — World Energy Outlook <span class="resource-lang">EN</span></a></div>
+            <div class="resource-desc">Référence mondiale sur les perspectives énergétiques et les trajectoires de décarbonation, publiée par l'Agence internationale de l'énergie.</div>
+          </li>
+        </ul>
+
+        <!-- ── Références ── -->
+        <h3 class="about-h3">Références</h3>
+        <p>Sources principales utilisées pour construire et paramétrer les scénarios présentés.</p>
+        <ul class="ref-list">
+          <li>
+            Ressources naturelles Canada — <a href="https://oee.nrcan.gc.ca/organisme/statistiques/bnce/apd/menus/evolution/tableaux_complets/liste.cfm" target="_blank">Base de données complète sur la consommation d'énergie</a>.
+            Utilisée pour calculer les demandes finales actuelles du système énergétique québécois.
+          </li>
+          <li>
+            Régie de l'énergie du Canada — <a href="https://www.cer-rec.gc.ca/fr/donnees-analyse/avenir-energetique-canada/2023/" target="_blank">Avenir énergétique du Canada en 2023 : Offre et demande énergétiques à l'horizon 2050</a>.
+            Utilisée pour projeter les demandes finales à l'horizon 2050.
+          </li>
+          <li>
+            Kazlou, T., Cherp, A. &amp; Jewell, J. (2024). Feasible deployment of carbon capture and storage and the requirements of climate targets. <em>Nature Climate Change</em>, 14, 1047–1055.
+            <a href="https://doi.org/10.1038/s41558-024-02104-0" target="_blank">doi:10.1038/s41558-024-02104-0</a>.
+            Utilisée pour justifier le taux de succès de 10 % des projets CCS dans le scénario Lim. CC.
+          </li>
+        </ul>
+
+        <!-- ── Contributions ── -->
+        <h3 class="about-h3">Contributions des auteurs</h3>
+        <table class="scenarios-table contrib-table">
+          <thead>
+            <tr><th>Auteur·e</th><th>Contributions</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Matthieu Souttre</strong></td>
+              <td>Conception du site, Modélisation, Résultats, Analyse</td>
+            </tr>
+            <tr>
+              <td><strong>Titouan Greffe</strong></td>
+              <td>Résultats, Analyse</td>
+            </tr>
+            <tr>
+              <td><strong>Éric Pineault</strong></td>
+              <td>Narratifs</td>
+            </tr>
+            <tr>
+              <td><strong>Cécile Bulle</strong></td>
+              <td>Supervision</td>
             </tr>
           </tbody>
         </table>
