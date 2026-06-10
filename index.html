@@ -298,10 +298,60 @@
     .sankey-placeholder svg { opacity: 0.3; width: 32px; height: 32px; }
 
     /* ── À propos pane ── */
+    .about-pane-wrapper {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .about-sidebar {
+      width: var(--sidebar-w);
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      flex-shrink: 0;
+      padding: 1rem 0;
+    }
+    .about-sidebar::-webkit-scrollbar { width: 4px; }
+    .about-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .about-sidebar .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      padding: 0.75rem 1rem 0.35rem;
+    }
+    .about-sidebar .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 1rem;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.1s, color 0.1s;
+      user-select: none;
+      border-left: 3px solid transparent;
+    }
+    .about-sidebar .nav-item:hover { background: var(--bg); color: var(--text); }
+    .about-sidebar .nav-item.active {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 500;
+      border-left-color: var(--accent);
+    }
+    .about-content-wrapper {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
     .about-content {
-      max-width: 680px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1.5rem;
+      width: 100%;
     }
     .about-content h2 {
       font-family: 'Source Serif 4', serif;
@@ -619,10 +669,45 @@
       </div>
     </div>
 
-    <!-- Pane : À propos -->
-    <div class="pane" id="pane-about">
-      <div class="about-content">
-        <h2>Scénarios de transition énergétique du Front Commun pour la transition énergétique du Québec</h2>
+     <!-- Pane : À propos -->
+     <div class="pane" id="pane-about">
+       <div class="about-pane-wrapper">
+         <!-- Sidebar for About section -->
+         <aside class="about-sidebar" id="sidebar-about">
+           <div class="section-label">Table des matières</div>
+            <div class="nav-item active" onclick="scrollToSection('intro', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><polyline points="12 7 12 12 16 14"/></svg>
+              Introduction
+            </div>
+            <div class="nav-item" onclick="scrollToSection('cheminement', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12s4.477 10 10 10h8l-4-4"/></svg>
+              Cheminement
+            </div>
+            <div class="nav-item" onclick="scrollToSection('descriptions', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Descriptions
+            </div>
+            <div class="nav-item" onclick="scrollToSection('hypotheses', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              Hypothèses chiffrées
+            </div>
+            <div class="nav-item" onclick="scrollToSection('ressources', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              Ressources
+            </div>
+            <div class="nav-item" onclick="scrollToSection('references', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Références
+            </div>
+            <div class="nav-item" onclick="scrollToSection('contributions', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Contributions
+            </div>
+         </aside>
+
+         <div class="about-content-wrapper">
+           <div class="about-content">
+             <h2 id="intro">Scénarios de transition énergétique du Front Commun pour la transition énergétique du Québec</h2>
         <p>
           Ces résultats ont été produits dans le cadre du
           <a href="https://www.pourlatransitionenergetique.org/" target="_blank">Front commun pour la transition énergétique</a>.
@@ -641,6 +726,40 @@
           Pour aller dans cette direction, une contrainte net-négative peut être mise en place dans EnergyScope afin de compenser les émissions non-énergétiques et/ou à l'étranger.
         </p>
 
+         <!-- ── Cheminement narratif ── -->
+         <h3 class="about-h3" id="cheminement">Cheminement des scénarios</h3>
+        <p>Pour cet exercice, trois scénarios narratifs de la transition ont été préparés et modélisés via EnergyScope. Un premier scénario <strong>Québec brut</strong> joue le rôle de <em>business as usual</em>. Deux scénarios de transition socio-écologique empruntent des trajectoires opposées : ils ont en commun de rompre avec le néolibéralisme économique — la transition implique dans les deux cas une certaine planification de l'économie par l'État, une réduction du rôle du marché, et une réduction des inégalités sociales et territoriales. Leur divergence repose sur leur rapport différencié à la centralisation/décentralisation et à la mondialisation ou au retour à un certain protectionnisme.</p>
+        <p>Le scénario <strong>Accélération verte</strong> imagine une réponse globale et coordonnée au défi climatique : un modèle de planification centralisée « top-down » qui mise sur un État fort soumis à des instances internationales contraignantes, avec une égalisation des conditions de vie entre le Nord et le Sud global et une orientation technophile de l'innovation exclusivement vers la décarbonation. Le scénario <strong>Québec sobre</strong> se déploie dans un contexte d'effondrement du commerce mondial et de politiques protectionnistes : le Québec mise sur la sobriété, la décentralisation et la souveraineté économique, dans une planification « bottom-up » qui renforce les capacités des communautés locales, avec une orientation plus technophobe et une tendance à la ruralisation.</p>
+
+         <!-- ── Descriptions qualitatives ── -->
+         <h3 class="about-h3" id="descriptions">Description des scénarios</h3>
+        <div class="scenario-cards">
+          <div class="scard scard-brut">
+            <div class="scard-header">
+              <span class="scard-icon">⚙️</span>
+              <span class="scard-title">Québec brut</span>
+              <span class="scard-sub">Prolongement du modèle actuel</span>
+            </div>
+            <p>Ce scénario dépeint un Québec qui prolonge et intensifie le modèle de développement économique actuel énergivore, misent sur l'exportation de matières premières faiblement transformées. Il prolonge également la norme de consommation individuelle et privée, avec un mode de vie basé sur la forte consommation de matière et d'énergie, mais très inégalitaire sur les plans social et territorial. Le développement par étalement urbain demeure la norme autour des centres actuels (Montréal, Québec, Gatineau, Trois-Rivières et Sherbrooke).</p>
+          </div>
+          <div class="scard scard-av">
+            <div class="scard-header">
+              <span class="scard-icon">🌍</span>
+              <span class="scard-title">Accélération verte</span>
+              <span class="scard-sub">Transition technologique mondialisée</span>
+            </div>
+            <p>Dans ce scénario, il y a une réponse globale au défi climatique : les politiques de transition sont coordonnées et misent sur le déploiement de technologies. Cette coordination repose sur un effort d'égalisation des niveaux de vie entre le Nord et le Sud global. Dans cette division internationale du travail, le Québec devient un fournisseur de matériaux, d'équipements et de composantes essentielles aux énergies renouvelables et aux technologies de décarbonation. Il en résulte une consommation individuelle comprimée, mais une expansion des biens et services collectifs, et une réduction des inégalités par des politiques redistributives. De nouveaux pôles métropolitains se développent, notamment sur la Côte-Nord.</p>
+          </div>
+          <div class="scard scard-sobre">
+            <div class="scard-header">
+              <span class="scard-icon">🌿</span>
+              <span class="scard-title">Québec sobre</span>
+              <span class="scard-sub">Sobriété, décentralisation, souveraineté</span>
+            </div>
+            <p>Dans ce scénario, le Québec répond au défi climatique en réduisant drastiquement sa consommation de matière et d'énergie sans coordination globale. Les technologies contribuent à la transition, mais beaucoup moins que les changements d'habitudes et les transformations structurelles allant dans le sens de politiques de décroissance et de démondialisation. Une tendance notable est la réduction de l'importance démographique et économique des grandes villes au profit du milieu rural. La consommation de masse est drastiquement réduite, les biens sont plus durables, l'autoproduction et la production communautaire prennent une grande place.</p>
+          </div>
+        </div>
+
         <table class="scenarios-table">
           <thead>
             <tr>
@@ -652,118 +771,119 @@
           <tbody>
             <tr>
               <td><code>actuel</code></td>
-              <td>Actuel (2023), sans transition</td>
+              <td>Actuel (2023), configuration énergétique actuelle</td>
               <td><span class="badge badge-nz" style="background:#f0ede6;color:#6b6559;">Actuel</span></td>
             </tr>
             <tr>
               <td><code>brut</code></td>
-              <td>Croissance non contrainte, sans objectif climatique</td>
+              <td>Scénario <strong>brut</strong>, sans contraintes sur les émissions</td>
               <td>—</td>
             </tr>
             <tr>
               <td><code>brut_nz</code></td>
-              <td>Croissance non contrainte, avec objectif zéro net</td>
+              <td>Scénario <strong>brut</strong>, avec contrainte net-zéro territorial sur le système énergétique</td>
               <td><span class="badge badge-nz">Zéro net</span></td>
             </tr>
             <tr>
               <td><code>acc_verte</code></td>
-              <td>Accélération verte, sans objectif zéro net</td>
+              <td>Scénario <strong>accélération verte</strong>, sans contraintes sur les émissions</td>
               <td>—</td>
             </tr>
             <tr>
               <td><code>acc_verte_nz</code></td>
-              <td>Accélération verte avec objectif zéro net</td>
+              <td>Scénario <strong>accélération verte</strong>, avec contrainte net-zéro territorial sur le système énergétique</td>
               <td><span class="badge badge-nz">Zéro net</span></td>
             </tr>
             <tr>
               <td><code>sobre</code></td>
-              <td>Sobriété énergétique, sans objectif zéro net</td>
+              <td>Scénario <strong>sobre</strong>, sans contraintes sur les émissions</td>
               <td>—</td>
             </tr>
             <tr>
               <td><code>sobre_nz</code></td>
-              <td>Sobriété énergétique, atteinte du zéro net</td>
+              <td>Scénario <strong>sobre</strong>, avec contrainte net-zéro territorial sur le système énergétique</td>
               <td><span class="badge badge-nz">Zéro net</span></td>
             </tr>
             <tr>
               <td><code>sobre_lim_cc_nz</code></td>
-              <td>Sobriété + déploiement limité de CCS, zéro net</td>
+              <td>Scénario <strong>sobre</strong>, avec contrainte net-zéro territorial sur le système énergétique et limite de déploiement des technologies de captage et stockage de carbone</td>
               <td><span class="badge badge-cc">Limite CCS</span> <span class="badge badge-nz">Zéro net</span></td>
             </tr>
             <tr>
               <td><code>energyscope</code></td>
-              <td>Optimum EnergyScope avec demandes du Canada’s Energy Future 2023</td>
+              <td>Optimum EnergyScope avec les demandes projetées selon Canada’s Energy Future 2023 (scénario <i>Mesures actuelles</i>)</td>
               <td>—</td>
             </tr>
             <tr>
               <td><code>energyscope_nz</code></td>
-              <td>Optimum EnergyScope avec demandes du Canada’s Energy Future 2023, zéro net</td>
+              <td>Optimum EnergyScope avec les demandes projetées selon Canada’s Energy Future 2023 (scénario <i>Mesures actuelles</i>) avec contrainte net-zéro territorial sur le système énergétique</td>
               <td><span class="badge badge-nz">Zéro net</span></td>
             </tr>
           </tbody>
         </table>
 
-        <!-- ── Hypothèses chiffrées ── -->
-        <h3 class="about-h3">Hypothèses chiffrées des scénarios</h3>
-        <p>Principales hypothèses de demande et de structure du système énergétique en 2050, exprimées en proportion de la valeur de référence 2023. Les technologies de captage et stockage de carbone (CCS) sont disponibles dans tous les scénarios, mais ne s'activent que lorsque la contrainte de carboneutralité est active (scénarios NZ).</p>
-        <table class="hyp-table">
+         <!-- ── Hypothèses chiffrées ── -->
+         <h3 class="about-h3" id="hypotheses">Hypothèses chiffrées des scénarios</h3>
+        <p>Principales hypothèses de demande et de structure du système énergétique en 2050, exprimées en variation par rapport à la valeur de référence 2023. Les technologies de captage et stockage de carbone (CCS) sont disponibles dans tous les scénarios, mais ne s'activent que lorsque la contrainte de carboneutralité est active (scénarios NZ).</p>
+        <div style="overflow-x:auto;">
+        <table class="hyp-table hyp-table-rich">
           <thead>
             <tr>
-              <th>Variable</th>
-              <th>Brut</th>
-              <th>Acc. verte</th>
-              <th>Sobre</th>
+              <th style="min-width:160px">Variable</th>
+              <th style="min-width:220px">Québec brut</th>
+              <th style="min-width:220px">Accélération verte</th>
+              <th style="min-width:220px">Québec sobre</th>
             </tr>
           </thead>
           <tbody>
             <!-- Industrie -->
             <tr class="row-category">
               <td>Industrie</td>
-              <td><span class="val-hi">+90 %</span></td>
-              <td><span class="val-hi">+100 %</span></td>
-              <td><span class="val-lo">−30 %</span></td>
+              <td><em class="hyp-comment">Croissance du modèle extractif et exportation de matières premières faiblement transformées.</em><br><span class="val-hi">+90 %</span></td>
+              <td><em class="hyp-comment">Développement de grappes industrielles dans les matériaux et technologies de transition.</em><br><span class="val-hi">+100 %</span></td>
+              <td><em class="hyp-comment">Décroissance des industries exportatrices et extractives, développement d'industries manufacturières pour les marchés locaux.</em><br><span class="val-lo">−30 %</span></td>
             </tr>
             <!-- Bâtiment -->
             <tr class="row-category">
               <td>Bâtiment</td>
-              <td colspan="3"></td>
+              <td colspan="3"><em class="hyp-comment" style="font-weight:400">Croissance générale du modèle de consommation actuel (Brut) ; réduction de la consommation personnelle avec gains d'efficacité technologiques (Acc. verte) ; réduction importante et changements de comportement (Sobre).</em></td>
             </tr>
             <tr class="row-sub">
               <td>Eau chaude</td>
-              <td><span class="val-eq">= 0 %</span></td>
-              <td><span class="val-lo">−50 %</span></td>
-              <td><span class="val-lo">−50 %</span></td>
+              <td><em class="hyp-comment">Gains d'efficacité annulés par effets rebonds.</em><br><span class="val-eq">= 0 %</span></td>
+              <td><em class="hyp-comment">Gains d'efficacité importants avec déploiement de technologies efficaces.</em><br><span class="val-lo">−50 %</span></td>
+              <td><em class="hyp-comment">Changements de comportement et gains technologiques.</em><br><span class="val-lo">−50 %</span></td>
             </tr>
             <tr class="row-sub">
               <td>Électricité</td>
-              <td><span class="val-hi">+45 %</span></td>
-              <td><span class="val-lo">−25 %</span></td>
-              <td><span class="val-lo">−50 %</span></td>
+              <td><em class="hyp-comment">Croissance de la consommation d'objets connectés et branchés.</em><br><span class="val-hi">+45 %</span></td>
+              <td><em class="hyp-comment">Réduction de la consommation d'objets connectés et branchés.</em><br><span class="val-lo">−25 %</span></td>
+              <td><em class="hyp-comment">Réduction de la consommation d'objets connectés et branchés.</em><br><span class="val-lo">−50 %</span></td>
             </tr>
             <tr class="row-sub">
               <td>Chauffage</td>
-              <td><span class="val-hi">+25 %</span></td>
-              <td><span class="val-lo">−50 %</span></td>
-              <td><span class="val-lo">−50 %</span></td>
+              <td><em class="hyp-comment">Plus grands logements par capita.</em><br><span class="val-hi">+25 %</span></td>
+              <td><em class="hyp-comment">Réduction de la taille des logements et efficacité des technologies de chauffage.</em><br><span class="val-lo">−50 %</span></td>
+              <td><em class="hyp-comment">Réduction de la taille des logements et de la température en hiver.</em><br><span class="val-lo">−50 %</span></td>
             </tr>
             <!-- Services -->
             <tr class="row-category">
               <td>Services</td>
-              <td><span class="val-hi">+20 %</span></td>
-              <td><span class="val-lo">−40 %</span></td>
-              <td><span class="val-eq">= 0 %</span></td>
+              <td><em class="hyp-comment">Croissance de la consommation de services privés énergivores, essentiellement numériques.</em><br><span class="val-hi">+20 %</span></td>
+              <td><em class="hyp-comment">Réduction des services privés énergivores, augmentation des services collectifs, forts gains d'efficacité technologiques.</em><br><span class="val-lo">−40 %</span></td>
+              <td><em class="hyp-comment">Réduction des services privés énergivores, augmentation des services collectifs, sans gains technologiques importants.</em><br><span class="val-eq">= 0 %</span></td>
             </tr>
             <!-- Agriculture -->
             <tr class="row-category">
               <td>Agriculture</td>
-              <td><span class="val-lo">−10 %</span></td>
-              <td><span class="val-lo">−35 %</span></td>
-              <td><span class="val-hi">+50 %</span></td>
+              <td><em class="hyp-comment">Prolongement de la tendance à l'importation de biomasse ; réduction de l'empreinte énergétique du secteur.</em><br><span class="val-lo">−10 %</span></td>
+              <td><em class="hyp-comment">Maintien des importations de biomasse ; électrification de l'agriculture intensive et réduction des protéines animales dans les diètes.</em><br><span class="val-lo">−35 %</span></td>
+              <td><em class="hyp-comment">Réduction drastique des importations de biomasse ; transition vers une agriculture paysanne moins intensive, réduction des protéines animales.</em><br><span class="val-hi">+50 %</span></td>
             </tr>
             <!-- Mobilité des personnes -->
             <tr class="row-category">
               <td>Mobilité des personnes</td>
-              <td colspan="3"></td>
+              <td colspan="3"><em class="hyp-comment" style="font-weight:400">Brut : accentuation des habitudes actuelles. Acc. verte : réduction avec collectivisation et électrification pour la mobilité locale. Sobre : réduction avec croissance de la mobilité active.</em></td>
             </tr>
             <tr class="row-sub">
               <td>Courte distance</td>
@@ -778,15 +898,15 @@
               <td><span class="val-lo">−34 %</span></td>
             </tr>
             <tr class="row-sub">
-              <td>Longue distance</td>
-              <td><span class="val-hi">+25 %</span></td>
-              <td><span class="val-lo">−90 %</span></td>
-              <td><span class="val-lo">−90 %</span></td>
+              <td>Longue distance (avion)</td>
+              <td><em class="hyp-comment">Croissance de la mobilité par avion.</em><br><span class="val-hi">+25 %</span></td>
+              <td><em class="hyp-comment">Effondrement de la mobilité par avion, système de quota.</em><br><span class="val-lo">−90 %</span></td>
+              <td><em class="hyp-comment">Effondrement de la mobilité par avion, système de quota.</em><br><span class="val-lo">−90 %</span></td>
             </tr>
-            <!-- Mobilité en voiture individuelle -->
+            <!-- Voiture individuelle -->
             <tr class="row-category">
-              <td>Mobilité en voiture individuelle</td>
-              <td colspan="3"></td>
+              <td>Voiture individuelle</td>
+              <td colspan="3"><em class="hyp-comment" style="font-weight:400">Brut : dominance de l'auto-solo, l'industrie automobile maintient une part fossile et mise sur les VUS. Acc. verte &amp; Sobre : développement du transport collectif et électrification intégrale, marginalisation des VUS.</em></td>
             </tr>
             <tr class="row-sub">
               <td>Volume total</td>
@@ -795,25 +915,31 @@
               <td><span class="val-lo">−80 %</span></td>
             </tr>
             <tr class="row-sub">
-              <td>Part SUV électrique en 2050</td>
+              <td>Transport actif</td>
+              <td><em class="hyp-comment">Statu quo.</em><br><span class="val-eq">= 0 %</span></td>
+              <td><em class="hyp-comment">Croissance ×2.</em><br><span class="val-hi">+100 %</span></td>
+              <td><em class="hyp-comment">Croissance ×3.</em><br><span class="val-hi">+200 %</span></td>
+            </tr>
+            <tr class="row-sub">
+              <td>Part SUV électrique <small>(% absolu 2050)</small></td>
               <td>50 %</td>
               <td>20 %</td>
               <td>5 %</td>
             </tr>
             <tr class="row-sub">
-              <td>Part SUV essence en 2050</td>
+              <td>Part SUV essence <small>(% absolu 2050)</small></td>
               <td>50 %</td>
               <td>0 %</td>
               <td>0 %</td>
             </tr>
             <tr class="row-sub">
-              <td>Part voiture électrique en 2050</td>
+              <td>Part voiture électrique <small>(% absolu 2050)</small></td>
               <td>0 %</td>
               <td>80 %</td>
               <td>95 %</td>
             </tr>
             <tr class="row-sub">
-              <td>Part voiture essence en 2050</td>
+              <td>Part voiture essence <small>(% absolu 2050)</small></td>
               <td>0 %</td>
               <td>0 %</td>
               <td>0 %</td>
@@ -825,38 +951,38 @@
             </tr>
             <tr class="row-sub">
               <td>Volume total</td>
-              <td><span class="val-hi">+70 %</span></td>
-              <td><span class="val-hi">+50 %</span></td>
-              <td><span class="val-lo">−60 %</span></td>
+              <td><em class="hyp-comment">Croissance liée à la consommation privée et aux exportations.</em><br><span class="val-hi">+70 %</span></td>
+              <td><em class="hyp-comment">Croissance liée à la croissance des exportations.</em><br><span class="val-hi">+50 %</span></td>
+              <td><em class="hyp-comment">Réduction avec la baisse drastique de la consommation.</em><br><span class="val-lo">−60 %</span></td>
             </tr>
             <tr class="row-sub">
               <td>Part du train</td>
-              <td><span class="val-hi">+15 %</span></td>
-              <td><span class="val-hi">+75 %</span></td>
-              <td><span class="val-hi">+150 %</span></td>
+              <td><em class="hyp-comment">Léger développement du réseau ferroviaire.</em><br><span class="val-hi">+15 %</span></td>
+              <td><em class="hyp-comment">Important développement du réseau ferroviaire.</em><br><span class="val-hi">+75 %</span></td>
+              <td><em class="hyp-comment">Le ferroviaire devient la principale modalité de transport des marchandises.</em><br><span class="val-hi">+150 %</span></td>
             </tr>
-            <!-- Export -->
+            <!-- Export énergie -->
             <tr class="row-category">
-              <td>Export de sources d'énergie</td>
-              <td><span class="val-hi">+30 %</span></td>
-              <td><span class="val-hi">+100 %</span></td>
-              <td><span class="val-lo">−50 %</span></td>
+              <td>Export d'énergie</td>
+              <td><em class="hyp-comment">Légère croissance « opportuniste » des exportations d'électricité.</em><br><span class="val-hi">+30 %</span></td>
+              <td><em class="hyp-comment">Forte croissance des exportations pour appuyer la transition dans les régions limitrophes.</em><br><span class="val-hi">+100 %</span></td>
+              <td><em class="hyp-comment">Forte réduction des exportations pour appuyer la transition domestique.</em><br><span class="val-lo">−50 %</span></td>
             </tr>
             <!-- Imports fossiles -->
             <tr class="row-category">
-              <td>Imports de ressources fossiles</td>
-              <td colspan="3"></td>
+              <td>Imports fossiles</td>
+              <td colspan="3"><em class="hyp-comment" style="font-weight:400">Brut : l'industrie fossile canadienne maintient un flux vers le Québec, ralentissant l'électrification. Acc. verte : flux réduits via des technologies d'électrification. Sobre : flux réduits via changements structurels et comportementaux.</em></td>
             </tr>
             <tr class="row-sub">
               <td>Gaz</td>
               <td><span class="val-lo">−50 %</span></td>
-              <td><span class="val-eq">= 0 %</span></td>
+              <td><span class="val-lo">−100 %</span></td>
               <td><span class="val-lo">−100 %</span></td>
             </tr>
             <tr class="row-sub">
               <td>Diésel</td>
               <td><span class="val-eq">= 0 %</span></td>
-              <td><span class="val-lo">−30 %</span></td>
+              <td><em class="hyp-comment">Maintenu par les besoins industriels et le transport de marchandises.</em><br><span class="val-lo">−30 %</span></td>
               <td><span class="val-lo">−100 %</span></td>
             </tr>
             <tr class="row-sub">
@@ -873,7 +999,7 @@
             </tr>
             <tr class="row-sub">
               <td>Carburant avion</td>
-              <td><span class="val-hi">+25 %</span></td>
+              <td><em class="hyp-comment">Croissance liée à la mobilité aérienne des personnes et des marchandises.</em><br><span class="val-hi">+25 %</span></td>
               <td><span class="val-lo">−90 %</span></td>
               <td><span class="val-lo">−90 %</span></td>
             </tr>
@@ -885,19 +1011,16 @@
             </tr>
           </tbody>
         </table>
+        </div>
         <p class="hyp-note">
-          Toutes les valeurs sont exprimées en variation par rapport à la demande de référence 2023, sauf les parts de flotte (% absolus en 2050).
-          <span style="color:var(--accent); font-weight:500;">Vert</span> = réduction, <span style="color:#b45309; font-weight:500;">Ambre</span> = croissance par rapport à 2023.
-          Les scénarios avec variante NZ (zéro net) partagent les mêmes hypothèses de demande que leur équivalent sans contrainte climatique.
+          Valeurs exprimées en variation par rapport à 2023, sauf les parts de flotte (% absolus en 2050).
+          <span style="color:var(--accent); font-weight:500;">Vert</span> = réduction &nbsp;·&nbsp; <span style="color:#b45309; font-weight:500;">Ambre</span> = croissance.
+          Les variantes NZ partagent les mêmes hypothèses de demande que leur équivalent sans contrainte climatique.
         </p>
 
-        <p style="margin-top:1.5rem; font-size:12px; color:var(--text-faint);">
-          Outil développé avec EnergyScope-Québec, mescal &amp; Plotly.
-          Les graphes sont générés en Python et intégrés ici comme iframes statiques.
-        </p>
-        <h3 class="about-h3">Ressources à votre disposition</h3>
-        <p>Les documents suivants peuvent vous aider à explorer les données et le contexte énergétique québécois et international.</p>
-        <ul class="resource-list">
+          <h3 class="about-h3" id="ressources">Ressources à votre disposition</h3>
+          <p>Les documents suivants peuvent vous aider à explorer les données et le contexte énergétique québécois et international.</p>
+          <ul class="resource-list">
           <li>
             <div class="resource-title"><a href="https://energie.hec.ca/eeq/" target="_blank">État de l'énergie au Québec 2026</a></div>
             <div class="resource-desc">Tableau de bord annuel de la consommation et de la production énergétique au Québec, produit par HEC Montréal.</div>
@@ -916,8 +1039,8 @@
           </li>
         </ul>
 
-        <!-- ── Références ── -->
-        <h3 class="about-h3">Références</h3>
+         <!-- ── Références ── -->
+         <h3 class="about-h3" id="references">Références</h3>
         <p>Sources principales utilisées pour construire et paramétrer les scénarios présentés.</p>
         <ul class="ref-list">
           <li>
@@ -935,8 +1058,8 @@
           </li>
         </ul>
 
-        <!-- ── Contributions ── -->
-        <h3 class="about-h3">Contributions des auteurs</h3>
+         <!-- ── Contributions ── -->
+         <h3 class="about-h3" id="contributions">Contributions des auteurs</h3>
         <table class="scenarios-table contrib-table">
           <thead>
             <tr><th>Auteur·e</th><th>Contributions</th></tr>
@@ -961,12 +1084,14 @@
           </tbody>
         </table>
 
-        <p style="margin-top:1.5rem; font-size:12px; color:var(--text-faint);">
-          Outil développé avec EnergyScope-Québec, mescal &amp; Plotly.
-          Les graphes sont générés en Python et intégrés ici comme iframes statiques.
-        </p>
-      </div>
-    </div>
+         <p style="margin-top:2rem; font-size:12px; color:var(--text-faint);">
+           Outil développé avec EnergyScope-Québec, mescal &amp; Plotly.
+           Les graphes sont générés en Python et intégrés ici comme iframes statiques.
+         </p>
+       </div>
+     </div>
+     </div>
+     </div>
 
   </main>
 </div>
@@ -1076,8 +1201,50 @@
     }
   }
 
-  // init
-  updateSankeyLayout();
+   // init
+   updateSankeyLayout();
+
+   // About page navigation
+   function scrollToSection(sectionId, navItem) {
+     const element = document.getElementById(sectionId);
+     if (element) {
+       const wrapper = document.querySelector('.about-content-wrapper');
+       if (wrapper) {
+         setTimeout(() => {
+           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+         }, 50);
+       }
+     }
+
+     // Update sidebar active state
+     document.querySelectorAll('.about-sidebar .nav-item').forEach(item => {
+       item.classList.remove('active');
+     });
+     if (navItem) navItem.classList.add('active');
+   }
+
+   // Update sidebar active state on scroll
+   const aboutContentWrapper = document.querySelector('.about-content-wrapper');
+   if (aboutContentWrapper) {
+     aboutContentWrapper.addEventListener('scroll', () => {
+       const sections = ['intro', 'cheminement', 'descriptions', 'hypotheses', 'ressources', 'references', 'contributions'];
+       const scrollPos = aboutContentWrapper.scrollTop + 100;
+
+       for (let i = sections.length - 1; i >= 0; i--) {
+         const section = document.getElementById(sections[i]);
+         if (section && section.offsetTop <= scrollPos) {
+           document.querySelectorAll('.about-sidebar .nav-item').forEach(item => {
+             item.classList.remove('active');
+           });
+           document.querySelectorAll('.about-sidebar .nav-item').forEach((item, idx) => {
+             if (idx === i) item.classList.add('active');
+           });
+           break;
+         }
+       }
+     }, false);
+   }
+
 </script>
 </body>
 </html>
