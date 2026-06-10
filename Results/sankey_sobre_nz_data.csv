@@ -1,120 +1,124 @@
 target,source,value,source (FR),target (FR),color
-HEAT_LOW_T,AFC,11.765057033524,Pile à combustible alcaline,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,ALKALINE_ELECTROLYSIS,1828.5142328562783,Électrolyse alcaline,Chaleur (basse température),#B51F1F
-BIO_JETFUEL,BIOETHANOL_TO_BIOJETFUELS,8956.870755969065,Conversion du bioéthanol en carburant aviation,BIO_JETFUEL,#000000
-BIOETHANOL_TO_BIOJETFUELS,BIO_ETHANOL,15710.351305969738,Bioéthanol,Conversion du bioéthanol en carburant aviation,#000000
-DIESEL,CO2_TO_DIESEL,489.89925845036544,Conversion du CO2 en diesel,Diesel,#D3D3D3
-GASOLINE,CO2_TO_DIESEL,190.0809122787418,Conversion du CO2 en diesel,Essence,#808080
-BIO_JETFUEL,CO2_TO_JETFUELS,1895.3999414005282,Conversion du CO2 en carburant aviation,BIO_JETFUEL,#545454
-HEAT_LOW_T,BOILER,182.72593922315497,Chaudière,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,DIRECT_ELEC,56444.67301392651,Électricité directe,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,HP,4120.889235799527,Thermopompe,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,DEC_SOLAR,73.354230668778,Solaire thermique décentralisé,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,BOILER,8.91204892950887e-05,Chaudière,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,BOILER,96.59311052879154,Chaudière,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,HP,1.7995611414710426,Thermopompe,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,FT,1072.721773051814,Production de biodiesel par synthèse Fischer-Tropsch,Chaleur (basse température),#B51F1F
-BIO_DIESEL,FT,2715.7513241818074,Production de biodiesel par synthèse Fischer-Tropsch,Biodiesel,#6B8E23
-HEAT_HIGH_T,GASIFICATION_SNG,3.089084309618418e-05,Production de gaz naturel synthétique par gazéification du bois,Chaleur (haute température),#B51F1F
-CARBON_CAPTURE,HEAT_HIGH_T,15032.787012802517,Chaleur (haute température),Captage de CO2 en postcombustion,#B51F1F
-LT_DHN_WH,HEAT_LOW_T,460.47935589455784,Chaleur (basse température),Chaleur perdue basse température du réseau de chaleur urbain,#B51F1F
+HEAT_LOW_T,AFC,3.6863634816277013,Pile à combustible alcaline,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,ALKALINE_ELECTROLYSIS,2005.1172546073217,Électrolyse alcaline,Chaleur (basse température),#B51F1F
+BIO_JETFUEL,BIOETHANOL_TO_BIOJETFUELS,8956.870755969065,Conversion du bioéthanol en carburant aviation,Biocarburant d'aviation,#000000
+BIOETHANOL_TO_BIOJETFUELS,BIO_ETHANOL,15710.35130596974,Bioéthanol,Conversion du bioéthanol en carburant aviation,#000000
+DIESEL,CO2_TO_DIESEL,1674.577391349314,Conversion du CO2 en diesel,Diesel,#D3D3D3
+GASOLINE,CO2_TO_DIESEL,649.7360278435339,Conversion du CO2 en diesel,Essence,#808080
+BIO_JETFUEL,CO2_TO_JETFUELS,1895.399941400528,Conversion du CO2 en carburant aviation,Biocarburant d'aviation,#545454
+HEAT_LOW_T,BOILER,198.56613412215543,Chaudière,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,DIRECT_ELEC,56334.55668608172,Électricité directe,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,HP,4478.1219797097765,Thermopompe,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,DEC_SOLAR,79.71318175913554,Solaire thermique décentralisé,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,BOILER,4.6777219384809984e-05,Chaudière,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,BOILER,50.69942009910114,Chaudière,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,HP,0.9445467260318319,Thermopompe,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,FT,563.0460756845373,Production de biodiesel par synthèse Fischer-Tropsch,Chaleur (basse température),#B51F1F
+BIO_DIESEL,FT,1425.4331029988286,Production de biodiesel par synthèse Fischer-Tropsch,Biodiesel,#6B8E23
+HEAT_HIGH_T,GASIFICATION_H2,319.22430796370963,Production d'hydrogène par gazéification du bois,Chaleur (haute température),#B51F1F
+HEAT_HIGH_T,GASIFICATION_SNG,1.6213866805813947e-05,Production de gaz naturel synthétique par gazéification du bois,Chaleur (haute température),#B51F1F
+CARBON_CAPTURE,HEAT_HIGH_T,15613.545027925853,Chaleur (haute température),Captage de CO2 en postcombustion,#B51F1F
+LT_DHN_WH,HEAT_LOW_T,241.69463208764455,Chaleur (basse température),Chaleur perdue basse température du réseau de chaleur urbain,#B51F1F
 BIO_ETHANOL,IMP_BIO_ETHANOL,15710.351305969736,Importations de bio-éthanol,Bioéthanol,#000000
 JETFUEL,IMP_JETFUEL,1988.0000000000005,Importations de carburant aviation,Carburant aviation,#000000
-METHANOL,IMP_METHANOL,1584.0101286516779,Importations de méthanol,Méthanol,#A5DA00
-HEAT_HIGH_T,BOILER,1929.6799379966255,Chaudière,Chaleur (haute température),#B51F1F
-HEAT_HIGH_T,BOILER,53406.78440200496,Chaudière,Chaleur (haute température),#B51F1F
-HEAT_HIGH_T,DIRECT_ELEC,12855.846641910084,Électricité directe,Chaleur (haute température),#B51F1F
-HEAT_WASTE,LT_DHN_WH,460.47935589455784,Chaleur perdue basse température du réseau de chaleur urbain,Chaleur résiduelle,#B51F1F
+METHANOL,IMP_METHANOL,1584.0101286516776,Importations de méthanol,Méthanol,#A5DA00
+HEAT_HIGH_T,BOILER,1929.6799379966258,Chaudière,Chaleur (haute température),#B51F1F
+HEAT_HIGH_T,BOILER,54606.36976566497,Chaudière,Chaleur (haute température),#B51F1F
+HEAT_HIGH_T,DIRECT_ELEC,11917.795000086686,Électricité directe,Chaleur (haute température),#B51F1F
+HEAT_WASTE,LT_DHN_WH,241.69463208764455,Chaleur perdue basse température du réseau de chaleur urbain,Chaleur résiduelle,#B51F1F
+NEW_HYDRO_DAM,RES_HYDRO,3281.9829716894174,Potentiel hydraulique,Nouveaux barrages hydroélectriques,#000000
 HYDRO_RIVER,RES_HYDRO,73573.19568,Potentiel hydraulique,Hydroélectricité au fil de l'eau existante,#00CED1
 HYDRO_DAM,RES_HYDRO,127918.533528,Potentiel hydraulique,Barrages hydroélectriques existants,#00CED1
-NEW_HYDRO_DAM,RES_HYDRO,3265.634204784807,Potentiel hydraulique,Nouveaux barrages hydroélectriques,#000000
-DEC_SOLAR,RES_SOLAR,73.354230668778,Potentiel solaire photovoltaïque,Solaire thermique décentralisé,#000000
+DEC_SOLAR,RES_SOLAR,79.71318175913554,Potentiel solaire photovoltaïque,Solaire thermique décentralisé,#000000
 BOILER,WASTE,2332.0,Déchets organiques et papier,Chaudière,#FA8072
-CO2_TO_JETFUELS,WET_BIOMASS,6469.000000000003,Déchets de biomasse humide,Conversion du CO2 en carburant aviation,#545454
-GASIFICATION_SNG,WOOD,0.00012880718834242232,Bois résiduel,Production de gaz naturel synthétique par gazéification du bois,#CD853F
-BOILER,WOOD,213.5824893201273,Bois résiduel,Chaudière,#CD853F
-BOILER,WOOD,110.99095151856238,Bois résiduel,Chaudière,#CD853F
-BOILER,WOOD,61208.70945550841,Bois résiduel,Chaudière,#CD853F
-FT,WOOD,5102.896738137616,Bois résiduel,Production de biodiesel par synthèse Fischer-Tropsch,#CD853F
+CO2_TO_JETFUELS,WET_BIOMASS,6469.000000000001,Déchets de biomasse humide,Conversion du CO2 en carburant aviation,#545454
+BOILER,WOOD,58.25650346523697,Bois résiduel,Chaudière,#CD853F
+BOILER,WOOD,232.09758505436108,Bois résiduel,Chaudière,#CD853F
+FT,WOOD,2678.388800534799,Bois résiduel,Production de biodiesel par synthèse Fischer-Tropsch,#CD853F
+GASIFICATION_H2,WOOD,1806.7209096557176,Bois résiduel,Production d'hydrogène par gazéification du bois,#CD853F
+GASIFICATION_SNG,WOOD,6.760782115634148e-05,Bois résiduel,Production de gaz naturel synthétique par gazéification du bois,#CD853F
+BOILER,WOOD,62583.53613368208,Bois résiduel,Chaudière,#CD853F
 EUD_ELECTRICITY_EHV_EXPORT,ELECTRICITY,17778.0,Électricité,Exportation d'électricité très haute tension,#00BFFF
 EUD_HEAT_LOW_T_SC,ELECTRICITY,6379.803463423301,Électricité,Demande en froid (climatisation),#B51F1F
 EUD_LIGHTING,ELECTRICITY,22149.0822006876,Électricité,Demande en électricité pour l'éclairage,#00BFFF
 EUD_HEAT_HIGH_T,HEAT_HIGH_T,53159.524,Chaleur (haute température),Demande en chaleur haute température,#B51F1F
 EUD_HEAT_LOW_T_HW,HEAT_LOW_T,10148.913,Chaleur (basse température),Demande en chaleur basse température (eau chaude),#B51F1F
 EUD_HEAT_LOW_T_SH,HEAT_LOW_T,51792.034,Chaleur (basse température),Demande en chaleur basse température (chauffage),#B51F1F
-HOUSEHOLDS,EUD_HEAT_LOW_T_SC,3408.9434634233003,Demande en froid (climatisation),Secteur résidentiel,#B51F1F
-SERVICES,EUD_HEAT_LOW_T_SC,2970.86,Demande en froid (climatisation),Secteur tertiaire,#B51F1F
-AGRICULTURE,EUD_LIGHTING,124.26,Demande en électricité pour l'éclairage,Secteur agricole,#00BFFF
-HOUSEHOLDS,EUD_LIGHTING,5894.133200687601,Demande en électricité pour l'éclairage,Secteur résidentiel,#00BFFF
-INDUSTRY,EUD_LIGHTING,4094.419,Demande en électricité pour l'éclairage,Secteur industriel,#00BFFF
-SERVICES,EUD_LIGHTING,12036.27,Demande en électricité pour l'éclairage,Secteur tertiaire,#00BFFF
-INDUSTRY,EUD_HEAT_HIGH_T,52093.594,Demande en chaleur haute température,Secteur industriel,#B51F1F
-SERVICES,EUD_HEAT_HIGH_T,1065.93,Demande en chaleur haute température,Secteur tertiaire,#B51F1F
-AGRICULTURE,EUD_HEAT_LOW_T_HW,182.595,Demande en chaleur basse température (eau chaude),Secteur agricole,#B51F1F
-HOUSEHOLDS,EUD_HEAT_LOW_T_HW,6657.96,Demande en chaleur basse température (eau chaude),Secteur résidentiel,#B51F1F
-INDUSTRY,EUD_HEAT_LOW_T_HW,433.608,Demande en chaleur basse température (eau chaude),Secteur industriel,#B51F1F
-SERVICES,EUD_HEAT_LOW_T_HW,2874.75,Demande en chaleur basse température (eau chaude),Secteur tertiaire,#B51F1F
-AGRICULTURE,EUD_HEAT_LOW_T_SH,1643.37,Demande en chaleur basse température (chauffage),Secteur agricole,#B51F1F
-HOUSEHOLDS,EUD_HEAT_LOW_T_SH,27126.26,Demande en chaleur basse température (chauffage),Secteur résidentiel,#B51F1F
-INDUSTRY,EUD_HEAT_LOW_T_SH,2267.3839999999996,Demande en chaleur basse température (chauffage),Secteur industriel,#B51F1F
-SERVICES,EUD_HEAT_LOW_T_SH,20755.02,Demande en chaleur basse température (chauffage),Secteur tertiaire,#B51F1F
-MOBILITY_PASSENGER,BUS,105.2905127406663,Autobus,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,CAR,5540.553206108535,Voiture,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,COACH,42.50012644278907,Autocar,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,COMMUTER,34.96618147937145,Train de banlieue,Secteur de la mobilité des personnes,#000000
-MOBILITY_FREIGHT,LCV,3845.153645754021,Véhicule utilitaire léger,Secteur de la mobilité des marchandises,#000000
-MOBILITY_PASSENGER,PLANE,12840.270697369588,Avion,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,SCHOOLBUS,42.29027309532156,Autobus scolaire,Secteur de la mobilité des personnes,#000000
-MOBILITY_FREIGHT,SEMI,3334.1926788843966,Semi-remorque,Secteur de la mobilité des marchandises,#000000
-MOBILITY_FREIGHT,SHIP,1584.010128651678,Navire,Secteur de la mobilité des marchandises,#000000
-MOBILITY_PASSENGER,SUV,475.38189515130887,VUS,Secteur de la mobilité des personnes,#000000
-MOBILITY_FREIGHT,TRAIN,1762.5010522463704,Train,Secteur de la mobilité des marchandises,#000000
-MOBILITY_PASSENGER,TRAIN,2.6972520087248117,Train,Secteur de la mobilité des personnes,#000000
-BUS,GASOLINE,105.2905127406663,Essence,Autobus,#808080
-COACH,GASOLINE,42.50012644278907,Essence,Autocar,#808080
-PLANE,BIO_JETFUEL,10852.270697369588,BIO_JETFUEL,Avion,#000000
-PLANE,JETFUEL,1988.0,Carburant aviation,Avion,#000000
-SCHOOLBUS,GASOLINE,42.29027309532156,Essence,Autobus scolaire,#808080
-SEMI,BIO_DIESEL,2715.7513241818083,Biodiesel,Semi-remorque,#6B8E23
-SEMI,DIESEL,489.89925845032184,Diesel,Semi-remorque,#D3D3D3
-SHIP,METHANOL,1584.010128651678,Méthanol,Navire,#A5DA00
-ELECTRICITY,AFC,34.29514125272246,Pile à combustible alcaline,Électricité,#00BFFF
-CARBON_TRANSPORT_INJECTION,ELECTRICITY,2221.025311642745,Électricité,Transport et injection de CO2,#00BFFF
-CARBON_CAPTURE,ELECTRICITY,2040.707174587863,Électricité,Captage de CO2 en postcombustion,#00BFFF
-DIRECT_ELEC,ELECTRICITY,12855.846641910084,Électricité,Électricité directe,#00BFFF
-ALKALINE_ELECTROLYSIS,ELECTRICITY,11636.970809179711,Électricité,Électrolyse alcaline,#00BFFF
-HP,ELECTRICITY,1648.355694319811,Électricité,Thermopompe,#00BFFF
-DIRECT_ELEC,ELECTRICITY,56444.67301392651,Électricité,Électricité directe,#00BFFF
-HP,ELECTRICITY,0.5141603261345835,Électricité,Thermopompe,#00BFFF
-FT,ELECTRICITY,10.86300529672723,Électricité,Production de biodiesel par synthèse Fischer-Tropsch,#00BFFF
+HOUSEHOLDS,EUD_HEAT_LOW_T_SC,3408.9434634233003,Demande en froid (climatisation),Résidentiel,#B51F1F
+SERVICES,EUD_HEAT_LOW_T_SC,2970.86,Demande en froid (climatisation),Services,#B51F1F
+AGRICULTURE,EUD_LIGHTING,124.26,Demande en électricité pour l'éclairage,Agriculture,#00BFFF
+HOUSEHOLDS,EUD_LIGHTING,5894.133200687601,Demande en électricité pour l'éclairage,Résidentiel,#00BFFF
+INDUSTRY,EUD_LIGHTING,4094.419,Demande en électricité pour l'éclairage,Industrie,#00BFFF
+SERVICES,EUD_LIGHTING,12036.27,Demande en électricité pour l'éclairage,Services,#00BFFF
+INDUSTRY,EUD_HEAT_HIGH_T,52093.594,Demande en chaleur haute température,Industrie,#B51F1F
+SERVICES,EUD_HEAT_HIGH_T,1065.93,Demande en chaleur haute température,Services,#B51F1F
+AGRICULTURE,EUD_HEAT_LOW_T_HW,182.595,Demande en chaleur basse température (eau chaude),Agriculture,#B51F1F
+HOUSEHOLDS,EUD_HEAT_LOW_T_HW,6657.96,Demande en chaleur basse température (eau chaude),Résidentiel,#B51F1F
+INDUSTRY,EUD_HEAT_LOW_T_HW,433.608,Demande en chaleur basse température (eau chaude),Industrie,#B51F1F
+SERVICES,EUD_HEAT_LOW_T_HW,2874.75,Demande en chaleur basse température (eau chaude),Services,#B51F1F
+AGRICULTURE,EUD_HEAT_LOW_T_SH,1643.37,Demande en chaleur basse température (chauffage),Agriculture,#B51F1F
+HOUSEHOLDS,EUD_HEAT_LOW_T_SH,27126.26,Demande en chaleur basse température (chauffage),Résidentiel,#B51F1F
+INDUSTRY,EUD_HEAT_LOW_T_SH,2267.3839999999996,Demande en chaleur basse température (chauffage),Industrie,#B51F1F
+SERVICES,EUD_HEAT_LOW_T_SH,20755.02,Demande en chaleur basse température (chauffage),Services,#B51F1F
+MOBILITY_PASSENGER,BUS,433.228343722744,Autobus,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,CAR,5065.037295708756,Voiture,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,COACH,42.500126442780044,Autocar,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,COMMUTER,133.93676639281142,Train de banlieue,Mobilité des personnes,#000000
+MOBILITY_FREIGHT,LCV,3845.1536457540196,Véhicule utilitaire léger,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,PLANE,12840.27069736959,Avion,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,SCHOOLBUS,174.0075576780101,Autobus scolaire,Mobilité des personnes,#000000
+MOBILITY_FREIGHT,SEMI,3228.552590600414,Semi-remorque,Mobilité des marchandises,#000000
+MOBILITY_FREIGHT,SHIP,1584.0101286516774,Navire,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,SUV,434.5824214793979,VUS,Mobilité des personnes,#000000
+MOBILITY_FREIGHT,TRAIN,1762.5010522464345,Train,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,TRAIN,2.6972520087248224,Train,Mobilité des personnes,#000000
+BUS,GASOLINE,433.228343722744,Essence,Autobus,#808080
+COACH,GASOLINE,42.500126442780044,Essence,Autocar,#808080
+PLANE,BIO_JETFUEL,10852.27069736959,Biocarburant d'aviation,Avion,#000000
+PLANE,JETFUEL,1988.0000000000002,Carburant aviation,Avion,#000000
+SCHOOLBUS,GASOLINE,174.0075576780101,Essence,Autobus scolaire,#808080
+SEMI,BIO_DIESEL,1425.4331029988282,Biodiesel,Semi-remorque,#6B8E23
+SEMI,DIESEL,1674.577391349314,Diesel,Semi-remorque,#D3D3D3
+SHIP,METHANOL,1584.0101286516774,Méthanol,Navire,#A5DA00
+ELECTRICITY,AFC,10.74574954894475,Pile à combustible alcaline,Électricité,#00BFFF
+CARBON_TRANSPORT_INJECTION,ELECTRICITY,2232.496998049584,Électricité,Transport et injection de CO2,#00BFFF
+ALKALINE_ELECTROLYSIS,ELECTRICITY,12760.902016277598,Électricité,Électrolyse alcaline,#00BFFF
+DIRECT_ELEC,ELECTRICITY,11917.795000086686,Électricité,Électricité directe,#00BFFF
+CARBON_CAPTURE,ELECTRICITY,2119.5453199798167,Électricité,Captage de CO2 en postcombustion,#00BFFF
+HP,ELECTRICITY,1791.2487918839108,Électricité,Thermopompe,#00BFFF
+DIRECT_ELEC,ELECTRICITY,56334.55668608172,Électricité,Électricité directe,#00BFFF
+FT,ELECTRICITY,5.701732411995314,Électricité,Production de biodiesel par synthèse Fischer-Tropsch,#00BFFF
+HP,ELECTRICITY,0.269870493151952,Électricité,Thermopompe,#00BFFF
+GASIFICATION_H2,ELECTRICITY,103.08284944661456,Électricité,Production d'hydrogène par gazéification du bois,#00BFFF
 ELECTRICITY,HYDRO_DAM,127918.533528,Barrages hydroélectriques existants,Électricité,#00BFFF
 ELECTRICITY,HYDRO_RIVER,73573.19568,Hydroélectricité au fil de l'eau existante,Électricité,#00BFFF
-ELECTRICITY,IMP_ELECTRICITY_EHV,33889.000000000146,Importations d'électricité,Électricité,#00BFFF
-ELECTRICITY,NEW_HYDRO_DAM,3265.634204784807,Nouveaux barrages hydroélectriques,Électricité,#00BFFF
+ELECTRICITY,IMP_ELECTRICITY_EHV,33889.0,Importations d'électricité,Électricité,#00BFFF
+ELECTRICITY,NEW_HYDRO_DAM,3281.9829716894174,Nouveaux barrages hydroélectriques,Électricité,#00BFFF
 EUD_ELECTRICITY_EHV,ELECTRICITY,4962.782999999999,Électricité,Demande en électricité très haute tension,#00BFFF
 EUD_ELECTRICITY_HV,ELECTRICITY,51097.354,Électricité,Demande en électricité haute tension,#00BFFF
 EUD_ELECTRICITY_LV,ELECTRICITY,19351.75,Électricité,Demande en électricité basse tension,#00BFFF
 EUD_ELECTRICITY_MV,ELECTRICITY,14591.516,Électricité,Demande en électricité moyenne tension,#00BFFF
-INDUSTRY,EUD_ELECTRICITY_EHV,4962.782999999999,Demande en électricité très haute tension,Secteur industriel,#00BFFF
-INDUSTRY,EUD_ELECTRICITY_HV,51097.354,Demande en électricité haute tension,Secteur industriel,#00BFFF
-HOUSEHOLDS,EUD_ELECTRICITY_LV,8117.96,Demande en électricité basse tension,Secteur résidentiel,#00BFFF
-SERVICES,EUD_ELECTRICITY_LV,11233.79,Demande en électricité basse tension,Secteur tertiaire,#00BFFF
-AGRICULTURE,EUD_ELECTRICITY_MV,2982.4049999999997,Demande en électricité moyenne tension,Secteur agricole,#00BFFF
-INDUSTRY,EUD_ELECTRICITY_MV,8085.721,Demande en électricité moyenne tension,Secteur industriel,#00BFFF
-SERVICES,EUD_ELECTRICITY_MV,3523.39,Demande en électricité moyenne tension,Secteur tertiaire,#00BFFF
-CAR,ELECTRICITY,5540.553206108535,Électricité,Voiture,#00BFFF
-COMMUTER,ELECTRICITY,34.96618147937145,Électricité,Train de banlieue,#00BFFF
-SUV,ELECTRICITY,475.3818951513088,Électricité,VUS,#00BFFF
-TRAIN,ELECTRICITY,1765.1983042550953,Électricité,Train,#00BFFF
-NG,GASIFICATION_SNG,9.534210832155611e-05,Production de gaz naturel synthétique par gazéification du bois,Gaz naturel,#FFD700
-BOILER,NG,9.534210832155611e-05,Gaz naturel,Chaudière,#FFD700
-H2,ALKALINE_ELECTROLYSIS,7032.747049447224,Électrolyse alcaline,H2,#FF00FF
-H2_STO,H2,950.4304252761754,H2,Hydrogène vers stockage,#FF00FF
-AFC,H2,50.06031767764462,H2,Pile à combustible alcaline,#FF00FF
-CO2_TO_DIESEL,H2,753.4650594966621,H2,Conversion du CO2 en diesel,#545454
-CO2_TO_JETFUELS,H2,2255.5259302666286,H2,Conversion du CO2 en carburant aviation,#545454
-STO_H2,H2_S,950.4304252761752,H2_S,Stockage vers hydrogène,#FF00FF
-H2_S,H2_STO,950.4304252761754,Hydrogène vers stockage,H2_S,#FF00FF
-H2,STO_H2,950.4304252761752,Stockage vers hydrogène,H2,#FF00FF
-LCV,H2,3845.153645754021,H2,Véhicule utilitaire léger,#FF00FF
-SEMI,H2,128.54209625226684,H2,Semi-remorque,#FF00FF
+INDUSTRY,EUD_ELECTRICITY_EHV,4962.782999999999,Demande en électricité très haute tension,Industrie,#00BFFF
+INDUSTRY,EUD_ELECTRICITY_HV,51097.354,Demande en électricité haute tension,Industrie,#00BFFF
+HOUSEHOLDS,EUD_ELECTRICITY_LV,8117.96,Demande en électricité basse tension,Résidentiel,#00BFFF
+SERVICES,EUD_ELECTRICITY_LV,11233.79,Demande en électricité basse tension,Services,#00BFFF
+AGRICULTURE,EUD_ELECTRICITY_MV,2982.4049999999997,Demande en électricité moyenne tension,Agriculture,#00BFFF
+INDUSTRY,EUD_ELECTRICITY_MV,8085.721,Demande en électricité moyenne tension,Industrie,#00BFFF
+SERVICES,EUD_ELECTRICITY_MV,3523.39,Demande en électricité moyenne tension,Services,#00BFFF
+CAR,ELECTRICITY,5065.037295708756,Électricité,Voiture,#00BFFF
+COMMUTER,ELECTRICITY,133.93676639281142,Électricité,Train de banlieue,#00BFFF
+SUV,ELECTRICITY,434.5824214793979,Électricité,VUS,#00BFFF
+TRAIN,ELECTRICITY,1765.1983042551594,Électricité,Train,#00BFFF
+NG,GASIFICATION_SNG,5.004279878337638e-05,Production de gaz naturel synthétique par gazéification du bois,Gaz naturel,#FFD700
+BOILER,NG,5.004279883159846e-05,Gaz naturel,Chaudière,#FFD700
+H2,ALKALINE_ELECTROLYSIS,7711.989440797392,Électrolyse alcaline,H2,#FF00FF
+H2,GASIFICATION_H2,1108.4177359851028,Production d'hydrogène par gazéification du bois,H2,#FF00FF
+H2_STO,H2,986.0577189323412,H2,Hydrogène vers stockage,#FF00FF
+AFC,H2,15.685476614325868,H2,Pile à combustible alcaline,#FF00FF
+CO2_TO_DIESEL,H2,2575.5000278952452,H2,Conversion du CO2 en diesel,#545454
+CO2_TO_JETFUELS,H2,2255.525930266628,H2,Conversion du CO2 en carburant aviation,#545454
+STO_H2,H2_S,986.0577189323412,H2_S,Stockage vers hydrogène,#FF00FF
+H2_S,H2_STO,986.0577189323412,Hydrogène vers stockage,H2_S,#FF00FF
+H2,STO_H2,986.0577189323412,Stockage vers hydrogène,H2,#FF00FF
+LCV,H2,3845.1536457540196,H2,Véhicule utilitaire léger,#FF00FF
+SEMI,H2,128.54209625227205,H2,Semi-remorque,#FF00FF

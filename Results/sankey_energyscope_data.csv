@@ -1,10 +1,10 @@
 target,source,value,source (FR),target (FR),color
 HEAT_LOW_T,AFC,53.89992140759098,Pile à combustible alcaline,Chaleur (basse température),#B51F1F
-BIO_JETFUEL,BIOETHANOL_TO_BIOJETFUELS,22410.833130138486,Conversion du bioéthanol en carburant aviation,BIO_JETFUEL,#000000
+BIO_JETFUEL,BIOETHANOL_TO_BIOJETFUELS,22410.833130138486,Conversion du bioéthanol en carburant aviation,Biocarburant d'aviation,#000000
 BIOETHANOL_TO_BIOJETFUELS,BIO_ETHANOL,39308.6013102629,Bioéthanol,Conversion du bioéthanol en carburant aviation,#000000
 DIESEL,CO2_TO_DIESEL,8498.95314811056,Conversion du CO2 en diesel,Diesel,#D3D3D3
 GASOLINE,CO2_TO_DIESEL,3297.5938214668977,Conversion du CO2 en diesel,Essence,#808080
-BIO_JETFUEL,CROPS_TO_JETFUELS,1895.399941400528,Conversion des cultures en carburant aviation,BIO_JETFUEL,#000000
+BIO_JETFUEL,CROPS_TO_JETFUELS,1895.399941400528,Conversion des cultures en carburant aviation,Biocarburant d'aviation,#000000
 HEAT_LOW_T,BOILER,113789.91809354638,Chaudière,Chaleur (basse température),#B51F1F
 HEAT_LOW_T,BOILER,14.091780210810859,Chaudière,Chaleur (basse température),#B51F1F
 HEAT_LOW_T,COGEN,13.093116555430829,Cogénération,Chaleur (basse température),#B51F1F
@@ -42,38 +42,38 @@ EUD_LIGHTING,ELECTRICITY,30977.366826947353,Électricité,Demande en électricit
 EUD_HEAT_HIGH_T,HEAT_HIGH_T,92627.36453243565,Chaleur (haute température),Demande en chaleur haute température,#B51F1F
 EUD_HEAT_LOW_T_HW,HEAT_LOW_T,21046.314670256033,Chaleur (basse température),Demande en chaleur basse température (eau chaude),#B51F1F
 EUD_HEAT_LOW_T_SH,HEAT_LOW_T,100748.96228963003,Chaleur (basse température),Demande en chaleur basse température (chauffage),#B51F1F
-HOUSEHOLDS,EUD_HEAT_LOW_T_SC,3408.9434634233003,Demande en froid (climatisation),Secteur résidentiel,#B51F1F
-SERVICES,EUD_HEAT_LOW_T_SC,4399.83808666664,Demande en froid (climatisation),Secteur tertiaire,#B51F1F
-AGRICULTURE,EUD_LIGHTING,101.35091502867999,Demande en électricité pour l'éclairage,Secteur agricole,#00BFFF
-HOUSEHOLDS,EUD_LIGHTING,5894.133200687601,Demande en électricité pour l'éclairage,Secteur résidentiel,#00BFFF
-INDUSTRY,EUD_LIGHTING,7156.18942127359,Demande en électricité pour l'éclairage,Secteur industriel,#00BFFF
-SERVICES,EUD_LIGHTING,17825.693289957482,Demande en électricité pour l'éclairage,Secteur tertiaire,#00BFFF
-INDUSTRY,EUD_HEAT_HIGH_T,91048.72420212033,Demande en chaleur haute température,Secteur industriel,#B51F1F
-SERVICES,EUD_HEAT_HIGH_T,1578.6403303153202,Demande en chaleur haute température,Secteur tertiaire,#B51F1F
-AGRICULTURE,EUD_HEAT_LOW_T_HW,148.93103436071,Demande en chaleur basse température (eau chaude),Secteur agricole,#B51F1F
-HOUSEHOLDS,EUD_HEAT_LOW_T_HW,15882.028040329442,Demande en chaleur basse température (eau chaude),Secteur résidentiel,#B51F1F
-INDUSTRY,EUD_HEAT_LOW_T_HW,757.8562385968801,Demande en chaleur basse température (eau chaude),Secteur industriel,#B51F1F
-SERVICES,EUD_HEAT_LOW_T_HW,4257.4993569690005,Demande en chaleur basse température (eau chaude),Secteur tertiaire,#B51F1F
-AGRICULTURE,EUD_HEAT_LOW_T_SH,1340.39154378466,Demande en chaleur basse température (chauffage),Secteur agricole,#B51F1F
-HOUSEHOLDS,EUD_HEAT_LOW_T_SH,64707.51130215064,Demande en chaleur basse température (chauffage),Secteur résidentiel,#B51F1F
-INDUSTRY,EUD_HEAT_LOW_T_SH,3962.9137601122397,Demande en chaleur basse température (chauffage),Secteur industriel,#B51F1F
-SERVICES,EUD_HEAT_LOW_T_SH,30738.145683582483,Demande en chaleur basse température (chauffage),Secteur tertiaire,#B51F1F
-MOBILITY_PASSENGER,BUS,738.620583208142,Autobus,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,CAR,19587.36133429579,Voiture,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,COACH,78.83586370867155,Autocar,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,COMMUTER,228.83033920099476,Train de banlieue,Secteur de la mobilité des personnes,#000000
-MOBILITY_FREIGHT,LCV,6333.014862399193,Véhicule utilitaire léger,Secteur de la mobilité des marchandises,#000000
-MOBILITY_FREIGHT,PLANE,488.09615274353723,Avion,Secteur de la mobilité des marchandises,#000000
-MOBILITY_PASSENGER,PLANE,23818.136918795477,Avion,Secteur de la mobilité des personnes,#000000
-MOBILITY_PASSENGER,SCHOOLBUS,296.66933292113725,Autobus scolaire,Secteur de la mobilité des personnes,#000000
-MOBILITY_FREIGHT,SEMI,21717.93183802124,Semi-remorque,Secteur de la mobilité des marchandises,#000000
-MOBILITY_FREIGHT,SHIP,5925.064857765912,Navire,Secteur de la mobilité des marchandises,#000000
-MOBILITY_FREIGHT,TRAIN,2008.4298388205675,Train,Secteur de la mobilité des marchandises,#000000
-MOBILITY_PASSENGER,TRAIN,5.00328374396847,Train,Secteur de la mobilité des personnes,#000000
+HOUSEHOLDS,EUD_HEAT_LOW_T_SC,3408.9434634233003,Demande en froid (climatisation),Résidentiel,#B51F1F
+SERVICES,EUD_HEAT_LOW_T_SC,4399.83808666664,Demande en froid (climatisation),Services,#B51F1F
+AGRICULTURE,EUD_LIGHTING,101.35091502867999,Demande en électricité pour l'éclairage,Agriculture,#00BFFF
+HOUSEHOLDS,EUD_LIGHTING,5894.133200687601,Demande en électricité pour l'éclairage,Résidentiel,#00BFFF
+INDUSTRY,EUD_LIGHTING,7156.18942127359,Demande en électricité pour l'éclairage,Industrie,#00BFFF
+SERVICES,EUD_LIGHTING,17825.693289957482,Demande en électricité pour l'éclairage,Services,#00BFFF
+INDUSTRY,EUD_HEAT_HIGH_T,91048.72420212033,Demande en chaleur haute température,Industrie,#B51F1F
+SERVICES,EUD_HEAT_HIGH_T,1578.6403303153202,Demande en chaleur haute température,Services,#B51F1F
+AGRICULTURE,EUD_HEAT_LOW_T_HW,148.93103436071,Demande en chaleur basse température (eau chaude),Agriculture,#B51F1F
+HOUSEHOLDS,EUD_HEAT_LOW_T_HW,15882.028040329442,Demande en chaleur basse température (eau chaude),Résidentiel,#B51F1F
+INDUSTRY,EUD_HEAT_LOW_T_HW,757.8562385968801,Demande en chaleur basse température (eau chaude),Industrie,#B51F1F
+SERVICES,EUD_HEAT_LOW_T_HW,4257.4993569690005,Demande en chaleur basse température (eau chaude),Services,#B51F1F
+AGRICULTURE,EUD_HEAT_LOW_T_SH,1340.39154378466,Demande en chaleur basse température (chauffage),Agriculture,#B51F1F
+HOUSEHOLDS,EUD_HEAT_LOW_T_SH,64707.51130215064,Demande en chaleur basse température (chauffage),Résidentiel,#B51F1F
+INDUSTRY,EUD_HEAT_LOW_T_SH,3962.9137601122397,Demande en chaleur basse température (chauffage),Industrie,#B51F1F
+SERVICES,EUD_HEAT_LOW_T_SH,30738.145683582483,Demande en chaleur basse température (chauffage),Services,#B51F1F
+MOBILITY_PASSENGER,BUS,738.620583208142,Autobus,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,CAR,19587.36133429579,Voiture,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,COACH,78.83586370867155,Autocar,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,COMMUTER,228.83033920099476,Train de banlieue,Mobilité des personnes,#000000
+MOBILITY_FREIGHT,LCV,6333.014862399193,Véhicule utilitaire léger,Mobilité des marchandises,#000000
+MOBILITY_FREIGHT,PLANE,488.09615274353723,Avion,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,PLANE,23818.136918795477,Avion,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,SCHOOLBUS,296.66933292113725,Autobus scolaire,Mobilité des personnes,#000000
+MOBILITY_FREIGHT,SEMI,21717.93183802124,Semi-remorque,Mobilité des marchandises,#000000
+MOBILITY_FREIGHT,SHIP,5925.064857765912,Navire,Mobilité des marchandises,#000000
+MOBILITY_FREIGHT,TRAIN,2008.4298388205675,Train,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,TRAIN,5.00328374396847,Train,Mobilité des personnes,#000000
 BUS,GASOLINE,738.620583208142,Essence,Autobus,#808080
 CAR,GASOLINE,2183.4680416289266,Essence,Voiture,#808080
 COACH,GASOLINE,78.83586370867155,Essence,Autocar,#808080
-PLANE,BIO_JETFUEL,24306.233071539013,BIO_JETFUEL,Avion,#000000
+PLANE,BIO_JETFUEL,24306.233071539013,Biocarburant d'aviation,Avion,#000000
 SCHOOLBUS,GASOLINE,296.66933292113725,Essence,Autobus scolaire,#808080
 SEMI,DIESEL,8498.953148110559,Diesel,Semi-remorque,#D3D3D3
 SHIP,METHANOL,5925.064857765912,Méthanol,Navire,#A5DA00
@@ -93,13 +93,13 @@ EUD_ELECTRICITY_EHV,ELECTRICITY,8673.908362743628,Électricité,Demande en élec
 EUD_ELECTRICITY_HV,ELECTRICITY,89307.50471553394,Électricité,Demande en électricité haute tension,#00BFFF
 EUD_ELECTRICITY_LV,ELECTRICITY,36001.962519179404,Électricité,Demande en électricité basse tension,#00BFFF
 EUD_ELECTRICITY_MV,ELECTRICITY,21782.842380021462,Électricité,Demande en électricité moyenne tension,#00BFFF
-INDUSTRY,EUD_ELECTRICITY_EHV,8673.908362743628,Demande en électricité très haute tension,Secteur industriel,#00BFFF
-INDUSTRY,EUD_ELECTRICITY_HV,89307.50471553394,Demande en électricité haute tension,Secteur industriel,#00BFFF
-HOUSEHOLDS,EUD_ELECTRICITY_LV,19364.74060376944,Demande en électricité basse tension,Secteur résidentiel,#00BFFF
-SERVICES,EUD_ELECTRICITY_LV,16637.221915409962,Demande en électricité basse tension,Secteur tertiaire,#00BFFF
-AGRICULTURE,EUD_ELECTRICITY_MV,2432.5565406092896,Demande en électricité moyenne tension,Secteur agricole,#00BFFF
-INDUSTRY,EUD_ELECTRICITY_MV,14132.151859291811,Demande en électricité moyenne tension,Secteur industriel,#00BFFF
-SERVICES,EUD_ELECTRICITY_MV,5218.13398012036,Demande en électricité moyenne tension,Secteur tertiaire,#00BFFF
+INDUSTRY,EUD_ELECTRICITY_EHV,8673.908362743628,Demande en électricité très haute tension,Industrie,#00BFFF
+INDUSTRY,EUD_ELECTRICITY_HV,89307.50471553394,Demande en électricité haute tension,Industrie,#00BFFF
+HOUSEHOLDS,EUD_ELECTRICITY_LV,19364.74060376944,Demande en électricité basse tension,Résidentiel,#00BFFF
+SERVICES,EUD_ELECTRICITY_LV,16637.221915409962,Demande en électricité basse tension,Services,#00BFFF
+AGRICULTURE,EUD_ELECTRICITY_MV,2432.5565406092896,Demande en électricité moyenne tension,Agriculture,#00BFFF
+INDUSTRY,EUD_ELECTRICITY_MV,14132.151859291811,Demande en électricité moyenne tension,Industrie,#00BFFF
+SERVICES,EUD_ELECTRICITY_MV,5218.13398012036,Demande en électricité moyenne tension,Services,#00BFFF
 CAR,ELECTRICITY,17403.893292666864,Électricité,Voiture,#00BFFF
 COMMUTER,ELECTRICITY,228.83033920099476,Électricité,Train de banlieue,#00BFFF
 TRAIN,ELECTRICITY,2013.433122564536,Électricité,Train,#00BFFF
