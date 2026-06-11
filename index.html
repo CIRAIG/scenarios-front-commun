@@ -473,6 +473,52 @@
       color: var(--text-faint);
     }
     .ref-list a { color: var(--accent); }
+    /* ── Workshop links ── */
+    .workshop-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .workshop-link-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .workshop-link-card:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .wlink-icon {
+      width: 36px; height: 36px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .wlink-icon svg { width: 18px; height: 18px; }
+    .wlink-body { flex: 1; min-width: 0; }
+    .wlink-title { font-size: 13.5px; font-weight: 500; color: var(--text); }
+    .wlink-url {
+      font-size: 11.5px;
+      color: var(--text-faint);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+    }
+    .wlink-arrow { font-size: 16px; color: var(--text-faint); flex-shrink: 0; }
+    .workshop-link-card:hover .wlink-arrow { color: var(--accent); }
+
     .contrib-table { margin-top: 0.75rem; }
     .contrib-table td:first-child { white-space: nowrap; }
 
@@ -613,6 +659,12 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       Changement climatique
     </div>
+
+    <div class="section-label" style="margin-top:0.5rem">Atelier</div>
+    <div class="nav-item nav-item-workshop" onclick="switchTab('about'); setTimeout(() => scrollToSection('atelier', null), 80)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Liens de l'atelier
+    </div>
   </aside>
 
   <!-- ── Content area ── -->
@@ -690,6 +742,10 @@
             <div class="nav-item" onclick="scrollToSection('hypotheses', this)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
               Hypothèses chiffrées
+            </div>
+            <div class="nav-item nav-item-workshop" onclick="scrollToSection('atelier', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Liens de l'atelier
             </div>
             <div class="nav-item" onclick="scrollToSection('ressources', this)">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -1017,6 +1073,30 @@
           <span style="color:var(--accent); font-weight:500;">Vert</span> = réduction &nbsp;·&nbsp; <span style="color:#b45309; font-weight:500;">Ambre</span> = croissance.
           Les variantes NZ partagent les mêmes hypothèses de demande que leur équivalent sans contrainte climatique.
         </p>
+
+          <h3 class="about-h3" id="atelier">Liens de l'atelier</h3>
+          <div class="workshop-links">
+            <a class="workshop-link-card" id="wlink-sheets" href="https://docs.google.com/spreadsheets/d/1q1YvMVpJ-ayXMvkQbXlkM439df2RAvuzgRCk_fuu8kA/edit?usp=sharing" target="_blank">
+              <div class="wlink-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <div class="wlink-body">
+                <div class="wlink-title">Feuille Google partagée</div>
+                <div class="wlink-url" id="wlink-sheets-url">https://docs.google.com/spreadsheets/d/1q1YvMVpJ-ayXMvkQbXlkM439df2RAvuzgRCk_fuu8kA/edit?usp=sharing</div>
+              </div>
+              <div class="wlink-arrow">→</div>
+            </a>
+            <a class="workshop-link-card" id="wlink-slides" href="https://drive.google.com/drive/folders/1LSREpaae3zbIVv39VeFInQ9YgwErix1c?usp=sharing" target="_blank">
+              <div class="wlink-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div class="wlink-body">
+                <div class="wlink-title">Présentation (diapositives)</div>
+                <div class="wlink-url" id="wlink-slides-url">https://drive.google.com/drive/folders/1LSREpaae3zbIVv39VeFInQ9YgwErix1c?usp=sharing</div>
+              </div>
+              <div class="wlink-arrow">→</div>
+            </a>
+          </div>
 
           <h3 class="about-h3" id="ressources">Ressources à votre disposition</h3>
           <p>Les documents suivants peuvent vous aider à explorer les données et le contexte énergétique québécois et international.</p>
