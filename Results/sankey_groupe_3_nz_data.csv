@@ -1,42 +1,40 @@
 target,source,value,source (FR),target (FR),color
-BIO_JETFUEL,BIOETHANOL_TO_BIOJETFUELS,11730.485720388278,Conversion du bioéthanol en carburant aviation,Biocarburant d'aviation,#000000
-BIOETHANOL_TO_BIOJETFUELS,BIO_ETHANOL,20575.271953561038,Bioéthanol,Conversion du bioéthanol en carburant aviation,#000000
-GASOLINE,CO2_TO_DIESEL,565.860342543692,Conversion du CO2 en diesel,Essence,#808080
-DIESEL,CO2_TO_DIESEL,1458.4029447002372,Conversion du CO2 en diesel,Diesel,#D3D3D3
-BIO_JETFUEL,CO2_TO_JETFUELS,1895.3999414005275,Conversion du CO2 en carburant aviation,Biocarburant d'aviation,#545454
-HEAT_LOW_T,BOILER,7.692307692307631e-10,Chaudière,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,COGEN,7.692307692308922e-10,Cogénération,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,DIRECT_ELEC,1.3375617865505543e-07,Électricité directe,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,HP,69033.43640858913,Thermopompe,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,BOILER,7.424636661015686e-05,Chaudière,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,BOILER,97.8261867453324,Chaudière,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,COGEN,7.692307692304687e-10,Cogénération,Chaleur (basse température),#B51F1F
-HEAT_LOW_T,HP,4560.564046715409,Thermopompe,Chaleur (basse température),#B51F1F
-BIO_DIESEL,FT,2310.7069910586615,Production de biodiesel par synthèse Fischer-Tropsch,Biodiesel,#6B8E23
-HEAT_LOW_T,FT,912.7292614681713,Production de biodiesel par synthèse Fischer-Tropsch,Chaleur (basse température),#B51F1F
-HEAT_HIGH_T,GASIFICATION_H2,3026.8865780552233,Production d'hydrogène par gazéification du bois,Chaleur (haute température),#B51F1F
-HEAT_HIGH_T,GASIFICATION_SNG,2.6283594396385968e-05,Production de gaz naturel synthétique par gazéification du bois,Chaleur (haute température),#B51F1F
-CARBON_CAPTURE,HEAT_HIGH_T,19279.882484128426,Chaleur (haute température),Captage de CO2 en postcombustion,#B51F1F
-DAC_LT,HEAT_LOW_T,2.0938461538451807e-09,Chaleur (basse température),Captage direct à basse température,#B51F1F
-LT_DHN_WH,HEAT_LOW_T,7.69230769227504e-10,Chaleur (basse température),Chaleur perdue basse température du réseau de chaleur urbain,#B51F1F
-BIO_ETHANOL,IMP_BIO_ETHANOL,20593.32326486496,Importations de bio-éthanol,Bioéthanol,#000000
-GASOLINE,IMP_GASOLINE,7.692062471798358e-10,Importations d'essence,Essence,#808080
+BIO_JETFUEL,BIOETHANOL_TO_BIOJETFUELS,5144.600058599472,Conversion du bioéthanol en carburant aviation,Biocarburant d'aviation,#000000
+BIOETHANOL_TO_BIOJETFUELS,BIO_ETHANOL,9023.628502783473,Bioéthanol,Conversion du bioéthanol en carburant aviation,#000000
+DIESEL,CO2_TO_DIESEL,351.67172494258915,Conversion du CO2 en diesel,Diesel,#D3D3D3
+GASOLINE,CO2_TO_DIESEL,136.4486292777246,Conversion du CO2 en diesel,Essence,#808080
+BIO_JETFUEL,CO2_TO_JETFUELS,1895.399941400528,Conversion du CO2 en carburant aviation,Biocarburant d'aviation,#545454
+HEAT_LOW_T,HP,37163.0,Thermopompe,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,BOILER,0.00011795897465486692,Chaudière,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,BOILER,686.9098820410263,Chaudière,Chaleur (basse température),#B51F1F
+HEAT_LOW_T,HP,37043.16695893681,Thermopompe,Chaleur (basse température),#B51F1F
+ETHANOL_TO_JETFUELS,ETHANOL,840.3822282087971,Éthanol,Conversion de l'éthanol en carburant aviation,#E1DA00
+JETFUEL,ETHANOL_TO_JETFUELS,479.1232771999983,Conversion de l'éthanol en carburant aviation,Carburant aviation,#E1DA00
+BIO_DIESEL,FT,3516.127618947463,Production de biodiesel par synthèse Fischer-Tropsch,Biodiesel,#6B8E23
+HEAT_LOW_T,FT,1388.870409484248,Production de biodiesel par synthèse Fischer-Tropsch,Chaleur (basse température),#B51F1F
+HEAT_HIGH_T,GASIFICATION_H2,2536.66662489761,Production d'hydrogène par gazéification du bois,Chaleur (haute température),#B51F1F
+HEAT_HIGH_T,GASIFICATION_SNG,115.27200986660678,Production de gaz naturel synthétique par gazéification du bois,Chaleur (haute température),#B51F1F
+DAC_HT,HEAT_HIGH_T,13348.503588126274,Chaleur (haute température),Captage direct à haute température,#B51F1F
+BIO_ETHANOL,IMP_BIO_ETHANOL,9039.920876428576,Importations de bio-éthanol,Bioéthanol,#000000
+ETHANOL,IMP_ETHANOL,840.3822282087968,IMP_ETHANOL,Éthanol,#E1DA00
 JETFUEL,IMP_JETFUEL,1987.9999999999998,Importations de carburant aviation,Carburant aviation,#000000
-METHANOL,IMP_METHANOL,2122.6088520000008,Importations de méthanol,Méthanol,#A5DA00
+METHANOL,IMP_METHANOL,2122.6088519999994,Importations de méthanol,Méthanol,#A5DA00
 HEAT_HIGH_T,BOILER,1929.6799379966255,Chaudière,Chaleur (haute température),#B51F1F
-HEAT_HIGH_T,BOILER,45836.426381087615,Chaudière,Chaleur (haute température),#B51F1F
-HEAT_HIGH_T,DIRECT_ELEC,32277.88956116542,Électricité directe,Chaleur (haute température),#B51F1F
-HEAT_WASTE,LT_DHN_WH,7.69230769227504e-10,Chaleur perdue basse température du réseau de chaleur urbain,Chaleur résiduelle,#B51F1F
-HYDRO_RIVER,RES_HYDRO,73573.19568,Potentiel hydraulique,Hydroélectricité au fil de l'eau existante,#00CED1
+HEAT_HIGH_T,BOILER,9999.999999999995,Chaudière,Chaleur (haute température),#B51F1F
+HEAT_HIGH_T,COGEN,17840.256770807842,Cogénération,Chaleur (haute température),#B51F1F
+HEAT_HIGH_T,DIRECT_ELEC,44717.62824455761,Électricité directe,Chaleur (haute température),#B51F1F
 HYDRO_DAM,RES_HYDRO,127918.533528,Potentiel hydraulique,Barrages hydroélectriques existants,#00CED1
-NEW_WIND_ONSHORE,RES_WIND_ONSHORE,9868.135931164565,Potentiel éolien terrestre,Nouvelles éoliennes terrestres,#FFA500
+NEW_HYDRO_DAM,RES_HYDRO,12038.1534292269,Potentiel hydraulique,Nouveaux barrages hydroélectriques,#000000
+HYDRO_RIVER,RES_HYDRO,73573.19568,Potentiel hydraulique,Hydroélectricité au fil de l'eau existante,#00CED1
+NEW_WIND_ONSHORE,RES_WIND_ONSHORE,134.17942398317885,Potentiel éolien terrestre,Nouvelles éoliennes terrestres,#FFA500
 BOILER,WASTE,2332.0,Déchets organiques et papier,Chaudière,#FA8072
-CO2_TO_JETFUELS,WET_BIOMASS,6469.0,Déchets de biomasse humide,Conversion du CO2 en carburant aviation,#545454
-FT,WOOD,4341.818436199224,Bois résiduel,Production de biodiesel par synthèse Fischer-Tropsch,#CD853F
-GASIFICATION_H2,WOOD,17131.337229965327,Bois résiduel,Production d'hydrogène par gazéification du bois,#CD853F
-GASIFICATION_SNG,WOOD,0.00010959609885653532,Bois résiduel,Production de gaz naturel synthétique par gazéification du bois,#CD853F
-BOILER,WOOD,112.40782588796147,Bois résiduel,Chaudière,#CD853F
-BOILER,WOOD,52532.43639835142,Bois résiduel,Chaudière,#CD853F
+CO2_TO_JETFUELS,WET_BIOMASS,6469.000000000001,Déchets de biomasse humide,Conversion du CO2 en carburant aviation,#545454
+GASIFICATION_SNG,WOOD,480.65581891909187,Bois résiduel,Production de gaz naturel synthétique par gazéification du bois,#CD853F
+COGEN,WOOD,33664.5645265144,Bois résiduel,Cogénération,#CD853F
+FT,WOOD,6606.803796002283,Bois résiduel,Production de biodiesel par synthèse Fischer-Tropsch,#CD853F
+BOILER,WOOD,11460.849055201781,Bois résiduel,Chaudière,#CD853F
+BOILER,WOOD,789.298336060022,Bois résiduel,Chaudière,#CD853F
+GASIFICATION_H2,WOOD,14356.828467302445,Bois résiduel,Production d'hydrogène par gazéification du bois,#CD853F
 EUD_ELECTRICITY_EHV_EXPORT,ELECTRICITY,21333.0,Électricité,Exportation d'électricité très haute tension,#00BFFF
 EUD_HEAT_LOW_T_SC,ELECTRICITY,6973.9434634233,Électricité,Demande en froid (climatisation),#B51F1F
 EUD_LIGHTING,ELECTRICITY,25399.1332006876,Électricité,Demande en électricité pour l'éclairage,#00BFFF
@@ -59,46 +57,38 @@ AGRICULTURE,EUD_HEAT_LOW_T_SH,1972.0,Demande en chaleur basse température (chau
 HOUSEHOLDS,EUD_HEAT_LOW_T_SH,32551.0,Demande en chaleur basse température (chauffage),Résidentiel,#B51F1F
 INDUSTRY,EUD_HEAT_LOW_T_SH,2720.0,Demande en chaleur basse température (chauffage),Industrie,#B51F1F
 SERVICES,EUD_HEAT_LOW_T_SH,24906.0,Demande en chaleur basse température (chauffage),Services,#B51F1F
-MOBILITY_PASSENGER,BUS,380.280791235836,Autobus,Mobilité des personnes,#000000
-MOBILITY_PASSENGER,CAR,6610.847942787055,Voiture,Mobilité des personnes,#000000
-MOBILITY_PASSENGER,COACH,50.889859688958694,Autocar,Mobilité des personnes,#000000
-MOBILITY_PASSENGER,COMMUTER,118.59527392479995,Train de banlieue,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,BUS,355.77768203642233,Autobus,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,CAR,6331.358954661274,Voiture,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,COACH,7.903931118040305,Autocar,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,COMMUTER,118.5952739248001,Train de banlieue,Mobilité des personnes,#000000
 MOBILITY_FREIGHT,LCV,4613.4344867389445,Véhicule utilitaire léger,Mobilité des marchandises,#000000
-MOBILITY_FREIGHT,PLANE,205.59649320000113,Avion,Mobilité des marchandises,#000000
-MOBILITY_PASSENGER,PLANE,15408.289168588808,Avion,Mobilité des personnes,#000000
-MOBILITY_PASSENGER,SCHOOLBUS,152.74100292283106,Autobus scolaire,Mobilité des personnes,#000000
-MOBILITY_FREIGHT,SEMI,5167.148631130429,Semi-remorque,Mobilité des marchandises,#000000
-MOBILITY_FREIGHT,SHIP,2122.6088520000008,Navire,Mobilité des marchandises,#000000
-MOBILITY_FREIGHT,TRAIN,1629.5083467524423,Train,Mobilité des marchandises,#000000
-MOBILITY_PASSENGER,TRAIN,3.236694917927462,Train,Mobilité des personnes,#000000
-BUS,GASOLINE,380.280791235836,Essence,Autobus,#808080
-CAR,GASOLINE,1.334439566458771e-10,Essence,Voiture,#808080
-COACH,BIO_ETHANOL,1.7589376588318248,Bioéthanol,Autocar,#000000
-COACH,GASOLINE,49.13092203012687,Essence,Autocar,#808080
-PLANE,BIO_JETFUEL,13625.885661788809,Biocarburant d'aviation,Avion,#000000
-PLANE,JETFUEL,1988.0000000000007,Carburant aviation,Avion,#000000
-SCHOOLBUS,BIO_ETHANOL,16.292373645101982,Bioéthanol,Autobus scolaire,#000000
-SCHOOLBUS,GASOLINE,136.44862927772908,Essence,Autobus scolaire,#808080
-SEMI,BIO_DIESEL,2310.7069910586615,Biodiesel,Semi-remorque,#6B8E23
-SEMI,DIESEL,1458.4029447001171,Diesel,Semi-remorque,#D3D3D3
-SHIP,METHANOL,2122.6088520000008,Méthanol,Navire,#A5DA00
-ELECTRICITY,COGEN,7.384615384613007e-10,Cogénération,Électricité,#00BFFF
-ELECTRICITY,COGEN,9.615384615377682e-10,Cogénération,Électricité,#00BFFF
-DIRECT_ELEC,ELECTRICITY,32277.88956116542,Électricité,Électricité directe,#00BFFF
-CARBON_TRANSPORT_INJECTION,ELECTRICITY,2818.8333900858006,Électricité,Transport et injection de CO2,#00BFFF
-CARBON_CAPTURE,ELECTRICITY,2617.25217533278,Électricité,Captage de CO2 en postcombustion,#00BFFF
-DIRECT_ELEC,ELECTRICITY,1.3375617865505543e-07,Électricité,Électricité directe,#00BFFF
-HP,ELECTRICITY,27613.374563435653,Électricité,Thermopompe,#00BFFF
-DAC_LT,ELECTRICITY,2.1153846153830824e-10,Électricité,Captage direct à basse température,#00BFFF
-GASIFICATION_H2,ELECTRICITY,977.4321241636659,Électricité,Production d'hydrogène par gazéification du bois,#00BFFF
-HP,ELECTRICITY,1303.0182990615453,Électricité,Thermopompe,#00BFFF
-FT,ELECTRICITY,9.242827964234646,Électricité,Production de biodiesel par synthèse Fischer-Tropsch,#00BFFF
+MOBILITY_FREIGHT,PLANE,205.59649320000003,Avion,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,PLANE,9301.526783999998,Avion,Mobilité des personnes,#000000
+MOBILITY_PASSENGER,SCHOOLBUS,152.74100292283103,Autobus scolaire,Mobilité des personnes,#000000
+MOBILITY_FREIGHT,SEMI,5265.838039261676,Semi-remorque,Mobilité des marchandises,#000000
+MOBILITY_FREIGHT,SHIP,2122.608852,Navire,Mobilité des marchandises,#000000
+MOBILITY_FREIGHT,TRAIN,1629.5083467524428,Train,Mobilité des marchandises,#000000
+MOBILITY_PASSENGER,TRAIN,1.9538966423419097,Train,Mobilité des personnes,#000000
+PLANE,BIO_JETFUEL,7039.999999999998,Biocarburant d'aviation,Avion,#000000
+PLANE,JETFUEL,2467.123277199999,Carburant aviation,Avion,#000000
+SCHOOLBUS,BIO_ETHANOL,16.29237364510198,Bioéthanol,Autobus scolaire,#000000
+SCHOOLBUS,GASOLINE,136.44862927772905,Essence,Autobus scolaire,#808080
+SEMI,BIO_DIESEL,3516.1276189474643,Biodiesel,Semi-remorque,#6B8E23
+SEMI,DIESEL,351.6717249425602,Diesel,Semi-remorque,#D3D3D3
+SHIP,METHANOL,2122.608852,Méthanol,Navire,#A5DA00
+DIRECT_ELEC,ELECTRICITY,44717.62824455761,Électricité,Électricité directe,#00BFFF
+CARBON_TRANSPORT_INJECTION,ELECTRICITY,1562.9760920782355,Électricité,Transport et injection de CO2,#00BFFF
+HP,ELECTRICITY,14865.2,Électricité,Thermopompe,#00BFFF
+DAC_HT,ELECTRICITY,3328.057620137461,Électricité,Captage direct à haute température,#00BFFF
+GASIFICATION_H2,ELECTRICITY,819.1319309565199,Électricité,Production d'hydrogène par gazéification du bois,#00BFFF
+HP,ELECTRICITY,10583.761988267659,Électricité,Thermopompe,#00BFFF
+FT,ELECTRICITY,14.064510475789852,Électricité,Production de biodiesel par synthèse Fischer-Tropsch,#00BFFF
 ELECTRICITY,HYDRO_DAM,127918.533528,Barrages hydroélectriques existants,Électricité,#00BFFF
 ELECTRICITY,HYDRO_RIVER,73573.19568,Hydroélectricité au fil de l'eau existante,Électricité,#00BFFF
-ELECTRICITY,IMP_ELECTRICITY_EHV,33889.0,Importations d'électricité,Électricité,#00BFFF
-ELECTRICITY,NEW_WIND_ONSHORE,9868.135931164565,Nouvelles éoliennes terrestres,Électricité,#00BFFF
-ELECTRICITY,OCGT_BIOGAS_LARGE,7.692307692308922e-10,Turbine à biogaz à cycle ouvert 243 MW,Électricité,#00BFFF
-ELECTRICITY,OCGT_BIOGAS_SMALL,2.60519180957536e-08,Turbine à biogaz à cycle ouvert 100 MW,Électricité,#00BFFF
+ELECTRICITY,IMP_ELECTRICITY_EHV,33889.00000000001,Importations d'électricité,Électricité,#00BFFF
+ELECTRICITY,COGEN,6065.687302074666,Cogénération,Électricité,#00BFFF
+ELECTRICITY,NEW_HYDRO_DAM,12038.1534292269,Nouveaux barrages hydroélectriques,Électricité,#00BFFF
+ELECTRICITY,NEW_WIND_ONSHORE,134.17942398317885,Nouvelles éoliennes terrestres,Électricité,#00BFFF
 EUD_ELECTRICITY_EHV,ELECTRICITY,5955.0,Électricité,Demande en électricité très haute tension,#00BFFF
 EUD_ELECTRICITY_HV,ELECTRICITY,61316.0,Électricité,Demande en électricité haute tension,#00BFFF
 EUD_ELECTRICITY_LV,ELECTRICITY,23221.0,Électricité,Demande en électricité basse tension,#00BFFF
@@ -110,27 +100,15 @@ SERVICES,EUD_ELECTRICITY_LV,13480.0,Demande en électricité basse tension,Servi
 AGRICULTURE,EUD_ELECTRICITY_MV,3578.0,Demande en électricité moyenne tension,Agriculture,#00BFFF
 INDUSTRY,EUD_ELECTRICITY_MV,9702.0,Demande en électricité moyenne tension,Industrie,#00BFFF
 SERVICES,EUD_ELECTRICITY_MV,4228.0,Demande en électricité moyenne tension,Services,#00BFFF
-CAR,ELECTRICITY,6610.8479427865495,Électricité,Voiture,#00BFFF
-COMMUTER,ELECTRICITY,118.59527392479995,Électricité,Train de banlieue,#00BFFF
-TRAIN,ELECTRICITY,1632.7450416703698,Électricité,Train,#00BFFF
-NG,GASIFICATION_SNG,8.112220492711719e-05,Production de gaz naturel synthétique par gazéification du bois,Gaz naturel,#FFD700
-SNG_PYROLYSIS_THERMAL,HEAT_HIGH_T,4.6044121072771656e-07,Chaleur (haute température),Pyrolyse thermique du gaz naturel synthétique,#FFE100
-SNG_PYROLYSIS_PLASMA,HEAT_HIGH_T,2.7384615384608157e-10,Chaleur (haute température),Pyrolyse plasma du gaz naturel synthétique,#FFE100
-OCGT_BIOGAS_LARGE,NG,1.9230769230772304e-09,Gaz naturel,Turbine à biogaz à cycle ouvert 243 MW,#FFD700
-OCGT_BIOGAS_SMALL,NG,6.512979523938273e-08,Gaz naturel,Turbine à biogaz à cycle ouvert 100 MW,#FFD700
-COGEN,NG,1.6534833087852787e-09,Gaz naturel,Cogénération,#FFD700
-BOILER,NG,8.457910012718292e-10,Gaz naturel,Chaudière,#FFD700
-COGEN,NG,1.904934687809641e-09,Gaz naturel,Cogénération,#FFD700
-SNG_PYROLYSIS_PLASMA,NG,1.436153846153581e-09,Gaz naturel,Pyrolyse plasma du gaz naturel synthétique,#FFE100
-SNG_PYROLYSIS_THERMAL,NG,1.630836467046774e-06,Gaz naturel,Pyrolyse thermique du gaz naturel synthétique,#FFE100
-BOILER,NG,7.942960349318509e-05,Gaz naturel,Chaudière,#FFD700
-H2_MP,SNG_PYROLYSIS_PLASMA,7.692307692306804e-10,Pyrolyse plasma du gaz naturel synthétique,Hydrogène,#FF00FF
-HEAT_LOW_T,SNG_PYROLYSIS_PLASMA,1.8769230769228433e-10,Pyrolyse plasma du gaz naturel synthétique,Chaleur (basse température),#B51F1F
-H2_MP,SNG_PYROLYSIS_THERMAL,8.57432422211763e-07,Pyrolyse thermique du gaz naturel synthétique,Hydrogène,#FF00FF
-HEAT_LOW_T,SNG_PYROLYSIS_THERMAL,3.3439864466258716e-07,Pyrolyse thermique du gaz naturel synthétique,Chaleur (basse température),#B51F1F
-CAR,NG,3.7190659326058066e-10,Gaz naturel,Voiture,#FFD700
-H2,GASIFICATION_H2,10510.022840469526,Production d'hydrogène par gazéification du bois,H2,#FF00FF
-CO2_TO_JETFUELS,H2,2255.5259302666277,H2,Conversion du CO2 en carburant aviation,#545454
-CO2_TO_DIESEL,H2,2243.023728948965,H2,Conversion du CO2 en diesel,#545454
+CAR,ELECTRICITY,6331.358954661274,Électricité,Voiture,#00BFFF
+COACH,ELECTRICITY,7.903931118040305,Électricité,Autocar,#00BFFF
+COMMUTER,ELECTRICITY,118.5952739248001,Électricité,Train de banlieue,#00BFFF
+TRAIN,ELECTRICITY,1631.4622433947845,Électricité,Train,#00BFFF
+NG,GASIFICATION_SNG,355.77780823026785,Production de gaz naturel synthétique par gazéification du bois,Gaz naturel,#FFD700
+BOILER,NG,0.0001261938464207219,Gaz naturel,Chaudière,#FFD700
+BUS,NG,355.77768203642233,Gaz naturel,Autobus,#FFD700
+H2,GASIFICATION_H2,8807.870225338924,Production d'hydrogène par gazéification du bois,H2,#FF00FF
+CO2_TO_DIESEL,H2,540.8711129617021,H2,Conversion du CO2 en diesel,#545454
+CO2_TO_JETFUELS,H2,2255.525930266628,H2,Conversion du CO2 en carburant aviation,#545454
 LCV,H2,4613.4344867389445,H2,Véhicule utilitaire léger,#FF00FF
-SEMI,H2,1398.0386953716509,H2,Semi-remorque,#FF00FF
+SEMI,H2,1398.0386953716516,H2,Semi-remorque,#FF00FF
